@@ -58,12 +58,18 @@
 		- 등록
 		- 수정
 		- 삭제
+		
+	-- 마이페이지
+	branch:
+	java(Controller/Mapper/Service):
+  	view:
+		- 회원 정보 수정
     
 관리자
 	-- 상품
-	branch:
-	java(Controller/Mapper/Service):
-  	view: 
+	branch: leedaeun
+	java(Controller/Mapper/Service): Product
+  	view: admin
 		- 목록 조회
 		- 상세 조회
 		- 등록
@@ -76,7 +82,7 @@
   	view: 
 		- 목록 조회
 	
-	-- 배송
+	-- 주문
  	branch:
 	java(Controller/Mapper/Service):
   	view: 
