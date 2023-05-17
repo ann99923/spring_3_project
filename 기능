@@ -34,8 +34,8 @@
 
 	-- 주문하기
 	branch: ann
-	java(Controller/Mapper/Service): Order
-  	view: order
+	java(Controller/Mapper/Service): UserOrder
+  	view: userOrder
 		- 주문자 정보
 		- 배송 정보
 		- 할인/혜택 적용
@@ -61,15 +61,15 @@
 		
 	-- 마이페이지
 	branch:
-	java(Controller/Mapper/Service):
-  	view:
+	java(Controller/Mapper/Service): MyPage
+  	view: myPage
 		- 회원 정보 수정
     
 관리자
 	-- 상품
 	branch: leedaeun
 	java(Controller/Mapper/Service): Product
-  	view: admin
+  	view: adminProd
 		- 목록 조회
 		- 상세 조회
 		- 등록
@@ -78,14 +78,14 @@
 	
 	-- 회원
 	branch:
-	java(Controller/Mapper/Service):
-  	view: 
+	java(Controller/Mapper/Service): Admin
+  	view: user
 		- 목록 조회
 	
 	-- 주문
- 	branch:
-	java(Controller/Mapper/Service):
-  	view: 
+ 	branch: leedaeun
+	java(Controller/Mapper/Service): Order
+  	view: adminOrder
 		- 목록 조회
 		- 상태 변경
 	
@@ -110,8 +110,8 @@
 	
 	-- 공지사항
 	branch:
-	java(Controller/Mapper/Service):
-  	view:
+	java(Controller/Mapper/Service): Notice
+  	view: notice
 		- 조회
 		- 등록
 		- 수정
