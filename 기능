@@ -86,7 +86,7 @@
 	-- 후기
  	branch:
 	java(Controller/Mapper/Service):
-  view: 
+ 	view: 
 		- 조회
 		- 삭제
 	
