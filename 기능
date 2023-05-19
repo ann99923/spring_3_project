@@ -29,7 +29,7 @@
   	view: 
 
 	-- 장바구니 (3)
-	branch: 
+	branch: min
 	java(Controller/Mapper/Service): 
   	view: 
 		- 상품 수량 변경
