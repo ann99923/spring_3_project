@@ -2,9 +2,9 @@
 
 구매자
 	-- 로그인 / 로그아웃 (2)
-	branch: 
-  	java(Controller/Mapper/Service):
-  	view:
+	branch: min
+  	java(Controller/Mapper/Service): Login
+  	view: login
 
 	-- 회원가입 (o) (2)
 	branch: ann
