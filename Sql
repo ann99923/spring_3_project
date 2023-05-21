@@ -56,7 +56,6 @@ create table orderDetail(
     odStock number default 1 not null,
     odPrice number not null
 );
-commit;
 
 -- 공지사항 테이블
 create table notice(
