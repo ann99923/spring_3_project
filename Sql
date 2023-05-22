@@ -77,10 +77,11 @@ cartCount number
 
 -- 적립금 sequence
 create sequence point_seq start with 1 increment by 1;
--- 적립금
+-- 적립금 
 create table point(
     pointNum number primary key,
     id varchar2(50) not null,
     point number not null,
-    pointStatus number not null
+    pointStatus number not null,
+    pointContent varchar2(200)
 );
