@@ -82,6 +82,5 @@ create table point(
     pointNum number primary key,
     id varchar2(50) not null,
     point number not null,
-    pointStatus number not null,
     pointContent varchar2(200)
 );
