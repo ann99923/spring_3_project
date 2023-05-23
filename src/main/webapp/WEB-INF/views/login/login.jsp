@@ -61,7 +61,7 @@
 				</div>
 				
 			<div>
-				<input type="button" class="join" value="회원가입" onclick="location.href='join'">
+				<input type="button" class="join" value="회원가입" onclick="location.href='/join/joinPage'">
 			</div>
 			
 			<div class="login_btn">

@@ -37,7 +37,7 @@
 					<a href="/login/login">로그인</a>
 					</li>
 					<li>
-					<a href="#">회원가입</a>
+					<a href="/join/joinPage">회원가입</a>
 					</li>
 					</c:if>
 				
@@ -50,7 +50,7 @@
 					
 					<li>${member.name} 님</li>
 					<li>마이 페이지</li>
-					<li><a href="../shop/cart">장바구니</a></li>
+					<li><a href="/cart">장바구니</a></li>
 					<li>고객센터</li>
 					<li><a href="/login/logout.do">로그아웃</a></li>
 				</div>
