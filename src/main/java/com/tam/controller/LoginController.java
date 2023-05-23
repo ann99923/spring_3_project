@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tam.model.MemberVO;
@@ -19,7 +20,7 @@ import com.tam.service.LoginService;
 
 
 @Controller
-@RequestMapping(value="/member")
+@RequestMapping(value="/login")
 public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
@@ -56,12 +57,26 @@ public class LoginController {
 					return "redirect:/main";
 				}else {
 					rttr.addFlashAttribute("result", 0);
-					return "redirect:/member/login";
+					return "redirect:/login/login";
 				}
 				
 			}else { //일치하는 아이디가 없을때 로그인 실패 시
 				rttr.addFlashAttribute("result", 0);
-				return "redirect:/member/login"; //로그인 페이지로 이동
+				return "redirect:/login/login"; //로그인 페이지로 이동
 			}
 		}
+	
+	 /* 메인페이지 로그아웃 */
+    @RequestMapping(value="logout.do", method=RequestMethod.GET)
+    public String logoutMainGET(HttpServletRequest request) throws Exception{
+        
+        logger.info("logoutMainGET메서드 진입");
+        
+        HttpSession session = request.getSession();
+        
+        session.invalidate();
+        
+        return "redirect:/main";        
+        
+}
 }
