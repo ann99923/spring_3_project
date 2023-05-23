@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>Welcome BookMall</title>
 <link rel="stylesheet" href="/resources/css/cart.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -47,11 +49,11 @@
 				<li> 고객센터 </li>			
 			</ul>			
 		</div>
-		
-			
-		
 			<div class="clearfix"></div>			
-		</div>
+		
+		
+		
+		
 		<div class="content_area">
 		<div class="content_subject"><span>장바구니</span></div>
 			<!-- 장바구니 리스트 -->
@@ -89,12 +91,13 @@
 										<button class="quantity_btn plus_btn">+</button>
 										<button class="quantity_btn minus_btn">-</button>
 									</div>
-									<a class="quantity_modify_btn">변경</a>
+									<a class="quantity_modify_btn" data-cartnum="${ci.cartNum}">변경</a>
 								</td>
 								<td class="td_width_4 table_text_align_center">
 									<fmt:formatNumber value="${ci.price * ci.cartCount}" pattern="#,### 원" />
 								</td>
-								<td class="td_width_4 table_text_align_center delete_btn"><button>삭제</button></td>
+								<td class="td_width_4 table_text_align_center">
+								<button class="delete_btn" data-cartnum="${ci.cartNum}">삭제</button></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -102,6 +105,9 @@
 				<table class="list_table">
 				</table>
 			</div>
+			
+			
+			
 			<!-- 가격 종합 -->
 			<div class="content_total_section">
 				<div class="total_wrap">
@@ -137,7 +143,7 @@
 							</td>
 						</tr>
 					</table>
-					<div class="boundary_div">-</div>
+					<div class="boundary_div">----------------------</div>
 					<table>
 						<tr>
 							<td>
@@ -159,12 +165,35 @@
 					</table>
 				</div>
 			</div>
+			
+			<!-- 쇼핑계속하기 버튼 -->
+			<div class="continue_btn_section">
+				<a class="continue_btn">쇼핑 계속하기</a>
+			</div>
 			<!-- 구매 버튼 영역 -->
 			<div class="content_btn_section">
-				<a>주문하기</a>
+				<a class="order_btn">주문하기</a>
 			</div>
 			
 		</div>
+		
+		<!-- 수량 조정 form -->
+			<form action="/cart/update" method="POST" class="quantity_update_form">
+				<input type="hidden" name="cartNum" class="update_cartNum">
+				<input type="hidden" name="cartCount" class="update_cartCount">
+				<input type="hidden" name="Id" value="${member.id}">
+			</form>
+			
+			<!-- 삭제 form -->
+			<form action="/cart/delete" method="POST" class="quantity_delete_form">
+				<input type="hidden" name="cartNum" class="delete_cartNum">
+				<input type="hidden" name="Id" value="${member.id}">
+			</form>
+			
+			<!-- 주문 form -->
+			<form action="#" method="get" class="order_form">
+			
+			</form>
 		
 		<!-- Footer 영역 -->
 		<div class="footer_nav">
@@ -207,16 +236,14 @@
 	</div>	<!-- class="wrap" -->
 </div>	<!-- class="wrapper" -->
 
+
 <script>
 
 $(document).ready(function(){
 	
 	/* 종합 정보 섹션 정보 삽입 */
 	setTotalInfo();	
-	
-	
-	
-});	
+	});	
 
 /* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
 function setTotalInfo(){
@@ -264,8 +291,63 @@ function setTotalInfo(){
 }
 
 
+/* 수량버튼 */
+$(".plus_btn").on("click", function(){
+	let quantity = $(this).parent("div").find("input").val();
+	$(this).parent("div").find("input").val(++quantity);
+});
+$(".minus_btn").on("click", function(){
+	let quantity = $(this).parent("div").find("input").val();
+	if(quantity > 1){
+		$(this).parent("div").find("input").val(--quantity);		
+	}
+});
 
+
+/* 수량 수정 버튼 */
+$(".quantity_modify_btn").on("click", function(){
+	let cartNum = $(this).data("cartnum");
+	let cartCount = $(this).parent("td").find("input").val();
 	
+	$(".update_cartNum").val(cartNum);
+	$(".update_cartCount").val(cartCount);
+	$(".quantity_update_form").submit();
+	
+});
+
+/* 장바구니 삭제 버튼 */
+$(".delete_btn").on("click", function(e){
+	e.preventDefault();
+	const cartNum = $(this).data("cartnum");
+	
+	console.log(cartNum);
+	
+	$(".delete_cartNum").val(cartNum);
+	
+	$(".quantity_delete_form").submit();
+});
+
+/*주문 페이지 이동*/
+$(".order_btn").on("click", function(){
+	let form_contents ='';
+	let orderNumber = 0;
+	$(".cart_info_td").each(function(index, element){
+		let prodNum = $(element).find(".individual_prodNum_input").val();
+		let cartCount = $(element).find(".individual_cartCount_input").val();
+		
+		let prodNum_input = "<input name='orders[" + orderNumber + "].prodNum' type='hidden' value='" + prodNum + "'>";
+		form_contents += prodNum_input;
+		
+		let cartCount_input = "<input name='orders[" + orderNumber + "].cartCount' type='hidden' value='" + cartCount + "'>";
+		form_contents += cartCount_input;
+		
+		orderNumber += 1;
+	});
+	
+	$(".order_form").html(form_contents);
+	$(".order_form").submit();
+});
+ 
 
 		
 </script>
