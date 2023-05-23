@@ -40,9 +40,9 @@ public class CartController {
 	}
 	
 	//장바구니 페이지 이동
-	@GetMapping("/cart")
-	public String cartPageGET(String id, Model model) {
-		id= "admin";
+	@GetMapping("/cart/{id}")
+	public String cartPageGET(@PathVariable("id") String id, Model model) {
+		
 		model.addAttribute("cartInfo", cartService.getCartList(id));
 		
 		return "/cart";

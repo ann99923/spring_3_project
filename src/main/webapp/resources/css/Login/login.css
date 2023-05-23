@@ -55,6 +55,22 @@ ul{
 .a:link{color:white}
 .a:visited{color: white;}
 
+
+.top_gnb_area .top_right{
+	position: absolute;
+	top: 0px;
+	left: 200px;
+}
+.top_gnb_area .top_right li{
+	list-style: none;
+	float: left;
+	padding: 10px 10px 0 5px;
+	cursor: pointer;
+}
+.top_gnb_area .top_right li a{color:white; font-size:20px; font-weight: bold;}
+.a:link{color:white}
+.a:visited{color: white;}
+
 /*로고*/
 .logo{
 	width: 150px;

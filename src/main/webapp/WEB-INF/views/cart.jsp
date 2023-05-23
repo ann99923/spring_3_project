@@ -20,7 +20,9 @@
 <div class="wrapper">
 	<div class="wrap">
 		<div class="top_gnb_area">
-			
+			<a href="/main">
+				<img class="logo" src="resources/img/logo.png">
+				</a>
 			<ul class="list">
 				<c:if test = "${member == null}">	<!-- 로그인 x -->	
 					<li >
@@ -37,14 +39,12 @@
 						<li><a href="/admin/main">관리자 페이지</a></li>
 					</c:if>							
 					<li>
-						<a id="gnb_logout_button">로그아웃</a>
+						<a href="/login/logout.do">로그아웃</a>
 					</li>
 					<li>
 						마이룸
 					</li>
-					<li>
-						<a href="/cart/${member.memberId}">장바구니</a>
-					</li>
+				
 				</c:if>				
 				<li> 고객센터 </li>			
 			</ul>			
@@ -116,15 +116,16 @@
 							<td>
 								<table>
 									<tr>
-										<td>총 상품 가격</td>
+										<td>주문 금액</td>
 										<td>
 											<span class="totalPrice_span">70000</span> 원
 										</td>
 									</tr>
 									<tr>
-										<td>배송비</td>
-										<td>
-											<span class="delivery_price">3000</span>원
+										<td>배송비<span class="deliver_p">3만원 이상 구매시 무료</span></td>
+										
+											
+											<td><span class="delivery_price">3000</span>원
 										</td>
 									</tr>									
 									<tr>
@@ -151,7 +152,7 @@
 									<tbody>
 										<tr>
 											<td>
-												<strong>총 결제 예상 금액</strong>
+												<strong>총 금액</strong>
 											</td>
 											<td>
 												<span class="finalTotalPrice_span"></span> 원
@@ -277,6 +278,7 @@ function setTotalInfo(){
 	
 		finalTotalPrice = totalPrice + deliveryPrice;
 	
+		
 	/* ※ 세자리 컴마 Javscript Number 객체의 toLocaleString() */
 	
 	// 총 가격

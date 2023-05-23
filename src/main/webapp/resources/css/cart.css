@@ -91,18 +91,25 @@ caption {
 	padding-bottom :15px;
 	padding-left: 30px;
 }
-
+/*
 .content_btn_section {
 	margin-top: 20px;
 	text-align: right;
 	position: right;
+	display: block;
 	
 }
+*/
+.deliver_p{
+	font-size: 10px;
+	color: silver;
+}
+
 
 .content_btn_section a {
 	min-width: 125px;
-	padding: 17px 25px;
-	display: inline-block;
+	display: block;
+	position:right;
 	height: 39px;
 	font-size: 23px;
 	font-weight: bold;
