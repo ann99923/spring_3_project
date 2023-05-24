@@ -15,6 +15,6 @@ public interface OrderMapper {
 	// 주문 조회
 	public OrderVO readOrder(int orderNum);
 
-	// 주문 총 갯수 + 검색 기능
+	// 주문 총 갯수 + 검색 기능 
 	public int searchOrder(Criteria cri);
 }

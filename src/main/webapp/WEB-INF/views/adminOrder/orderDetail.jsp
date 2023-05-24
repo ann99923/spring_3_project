@@ -53,7 +53,7 @@
 		</div>
 		<div>
 			<label>배 송 메 시 지</label> <br>
-			<textarea readonly>${olist.orderMsg}</textarea>
+			<textarea readonly>${olist.orderMsg}</textarea> 
 		</div>
 		<div>
 			<label>받 는 적 립 금</label>

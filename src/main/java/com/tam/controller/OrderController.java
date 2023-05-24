@@ -32,23 +32,13 @@ public class OrderController {
 		PageMakerDTO pDto = new PageMakerDTO(cri, total);
 		model.addAttribute("pageMaker", pDto);
 	}
-	/*
-	// TEST
-	@PostMapping("/orderList")
-	public void adminOrderTestGET(Model model,Criteria cri) {		
-		log.info("test로 상태 변경하기");
-		model.addAttribute("olist", oService.pagingList(cri));
-		int total = oService.searchOrder(cri);
-		PageMakerDTO pDto = new PageMakerDTO(cri, total);
-		model.addAttribute("pageMaker", pDto);
-	}
-	*/
+	
 	// 주문 상세 페이지
 	@GetMapping("/orderDetail")
 	public void adminOrderDetailGET(int orderNum, Model model, RedirectAttributes rttr) {
 		log.info("주문 목록 상세 페이지 진입");
 		model.addAttribute("olist", oService.readOrder(orderNum));
-		rttr.addFlashAttribute("result", "조회 성공");
+		rttr.addFlashAttribute("result", "조회 성공"); 
 	}
 	
 	// 주문 상태 수정

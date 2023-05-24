@@ -16,7 +16,7 @@
     		<![CDATA[
     			)
     			where rn > (#{pageNum} -1) * #{amount}
-    		]]>
+    		]]> 
 		</select>
 		<!-- 상품 총 갯수 + 검색 -->
 		<select id="searchOrder" resultType="int">

@@ -36,38 +36,6 @@
 								<td><fmt:formatDate value="${olist.orderDate}" pattern="yyyy/MM/dd" /></td>
 								<td><c:out value="${olist.orderStatus}" />
 									<button class="update_btn" id='<c:out value="${olist.orderNum}" />' style="float: right;">수정</button></td>
-								<!-- 
-								<td>
-									<div class="x">
-										<select class="test" id='<c:out value="${olist.orderNum}" />' name='<c:out value="${olist.orderStatus}" />'>
-											<c:if test="${olist.orderStatus eq '배송중'}">
-												<option value="배송완료">배송완료</option>
-												<option value="상품준비">상품준비</option>
-												<option value="배송준비">배송준비</option>
-												<option value="배송중" selected="selected">배송중</option>
-											</c:if>
-											<c:if test="${olist.orderStatus eq '배송준비'}">
-												<option value="배송완료">배송완료</option>
-												<option value="상품준비">상품준비</option>
-												<option value="배송준비" selected="selected">배송준비</option>
-												<option value="배송중">배송중</option>
-											</c:if>
-											<c:if test="${olist.orderStatus eq '상품준비'}">
-												<option value="배송완료">배송완료</option>
-												<option value="상품준비" selected="selected">상품준비</option>
-												<option value="배송준비">배송준비</option>
-												<option value="배송중">배송중</option>
-											</c:if>
-											<c:if test="${olist.orderStatus eq '배송완료'}">
-												<option value="배송완료" selected="selected">배송완료</option>
-												<option value="상품준비">상품준비</option>
-												<option value="배송준비">배송준비</option>
-												<option value="배송중">배송중</option>
-											</c:if>
-										</select>
-									</div>
-								</td>
-								 -->
 							</tr>
 						</c:forEach>
 					</table>
@@ -77,7 +45,7 @@
 				</c:if>
 			</form>
 		</div>
-		<!-- 검색 영역 -->
+		<!-- 검색 영역 --> 
 		<div class="search_input">
 			<form action="/adminOrder/orderList" method="get" id="searchForm">
 				<div class="search_area">

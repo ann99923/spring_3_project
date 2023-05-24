@@ -15,7 +15,7 @@
 				<span>관리자 페이지</span>
 			</div>
 			<!-- contents_area -->
-			<div class="admin_wrap">
+			<div class="admin_wrap"> 
 				<!-- navigation -->
 				<div class="admin_navi_wrap">
 					<ul>

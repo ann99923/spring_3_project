@@ -19,7 +19,7 @@
 				<option value="상품준비">상품준비</option>
 				<option value="배송준비">배송준비</option>
 				<option value="배송중">배송중</option>
-				<option value="배송완료">배송완료</option>
+				<option value="배송완료">배송완료</option> 
 			</select>
 		</div>	
 		<div>
