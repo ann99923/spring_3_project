@@ -84,3 +84,14 @@ create table point(
     pointStatus number not null,
     pointContent varchar2(200)
 );
+
+-- Q&A sequence
+create sequence qna_seq start with1 increment by 1;
+-- Q&A 테이블
+create table qna(
+qnaNum number primary key,
+prodNum number not null,
+id varchar2(50) not null,
+qnaPw number(4) not null,
+qnaContent varchar2(3000)
+);
