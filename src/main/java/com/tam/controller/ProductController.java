@@ -16,7 +16,7 @@ import com.tam.model.PageMakerDTO;
 import com.tam.service.ProductService;
 
 @Controller
-@RequestMapping("/admin/*")
+@RequestMapping("/adminProd/*")
 public class ProductController {
 	private static final Logger log = LoggerFactory.getLogger(ProductController.class);
 	
@@ -51,7 +51,7 @@ public class ProductController {
 		pService.createProd(pVo);
 		rttr.addFlashAttribute("result", "등록 성공");
 		
-		return "redirect:/admin/list";
+		return "redirect:/adminProd/list";
 	}
 	
 	//상품 조회
@@ -74,7 +74,7 @@ public class ProductController {
 		pService.updateProd(pVo);		
 		rttr.addFlashAttribute("result" ,"수정 성공");
 		
-		return "redirect:/admin/list";
+		return "redirect:/adminProd/list";
 	}
 	
 	//상품 삭제
@@ -82,7 +82,7 @@ public class ProductController {
 	public String adminDeleteGET(int prodNum, RedirectAttributes rttr) {
 		pService.deleteProd(prodNum);
 		rttr.addFlashAttribute("result", "삭제 성공");
-		return "redirect:/admin/list";
+		return "redirect:/adminProd/list";
 	}
 	
 }
