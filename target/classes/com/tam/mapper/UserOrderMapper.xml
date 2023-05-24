@@ -35,7 +35,7 @@
 
 	<!-- 주문 테이블 등록 -->
 	<insert id="enrollUserOrder"> 
-		insert into oorder(orderNum, id, orderPrice, orderDate, orderPay, orderStatus, orderRecv, orderPost, orderAddr1, orderAddr2, orderMsg, orderPointIn, orderPointOut) 
+		insert into orderlist(orderNum, id, orderPrice, orderDate, orderPay, orderStatus, orderRecv, orderPost, orderAddr1, orderAddr2, orderMsg, orderPointIn, orderPointOut) 
 		values(#{orderNum}, #{id}, #{orderFinalPrice}, sysdate, 'X', '상품준비', #{orderRecv}, #{orderPost}, #{orderAddr1}, #{orderAddr2}, #{orderMsg}, #{orderPointIn}, #{orderPointOut})
 	</insert>
 	
@@ -83,7 +83,7 @@
 			select * from
 			(
 				select rownum rn, orderNum, id, orderStatus, orderDate
-				from oorder
+				from orderlist
 				where id = #{id}
 				and rownum <= #{pageNum} * #{amount}
 		]]>
@@ -99,7 +99,7 @@
 	
 	<!-- 상품 총 개수 -->
 	<select id="myOrderTotal" resultType="int">
-		select count(*) from oorder
+		select count(*) from orderlist
 		where id=#{id}
 	<if test="keyword != null">
 		and orderNum like '%' || #{keyword} || '%'	
@@ -114,7 +114,7 @@
 	
 	<!-- 주문 정보 -->
 	<select id="myOrder" resultType="com.tam.model.Order2DTO">
-		select * from oorder
+		select * from orderlist
 		where orderNum=#{orderNum}
 	</select>
 

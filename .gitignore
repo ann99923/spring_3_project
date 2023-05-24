@@ -3,6 +3,43 @@
 
 pom.properties
 MANIFEST.MF
+.classpath
+.project
+AnswerVO.java
+CartVO.java
+CategoryVO.java
+Criteria.java
+FnaVO.java
+home.jsp
+HomeController.java
+log4j.xml
+log4jdbc.log4j2.properties
+MapperTest.java
+MemberVO.java
+NoticeVO.java
+OrderDetailVO.java
+OrderVO.java
+org.eclipse.jdt.core.prefs
+org.eclipse.m2e.core.prefs
+org.eclipse.wst.common.component
+org.eclipse.wst.common.project.facet.core.xml
+org.eclipse.wst.validation.prefs
+org.springframework.ide.eclipse.beans.core.prefs
+org.springframework.ide.eclipse.core.prefs
+PageMakerDTO.java
+PointVO.java
+pom.xml
+ProductVO.java
+QnaVO.java
+ReviewVO.java
+root-context.xml
+security-context.xml
+servlet-context.xml
+test.css
+TestMapper.java
+TestMapper.xml
+TestService.java
+web.xml
 
 # sbteclipse plugin
 .target
