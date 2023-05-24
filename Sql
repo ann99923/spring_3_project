@@ -95,3 +95,13 @@ id varchar2(50) not null,
 qnaPw number(4) not null,
 qnaContent varchar2(3000)
 );
+
+-- review sequence
+create sequence re_seq start with 1 increment by 1;
+-- review table
+create table review (
+    reNum number(5) not null,
+    prodNum number(4) not null,
+    id varchar2(50) not null,
+    reContent varchar2(1000)
+);
