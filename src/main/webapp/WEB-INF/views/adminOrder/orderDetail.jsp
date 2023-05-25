@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,64 +12,68 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<%@include file="../includes/admin/header.jsp"%>
 
-		<h1>주문 목록 상세 페이지</h1>
+	<%@include file="../includes/admin/header.jsp"%>
 		<div>
-			<label>주 문 번 호</label>
-			<input name="orderNum" value="${olist.orderNum}" readonly>
+			<table border="1" style="font-size: 30px; text-align: center;">
+				<tr>
+					<th>주 문 번 호</th>
+					<td>${olist.orderNum}</td>
+				</tr>
+				<tr>
+					<th>회 원 아 이 디</th>
+					<td>${olist.id}</td>
+				</tr>
+				<tr>
+					<th>주 문 금 액</th>
+					<td><fmt:formatNumber value="${olist.orderPrice}" pattern="\#,###.##" /></td>
+				</tr>
+				<tr>
+					<th>주 문 일 자</th>
+					<td><fmt:formatDate value="${olist.orderDate}" pattern="yyyy/MM/dd" /></td>
+				</tr>
+				<tr>
+					<th>결 제 수 단</th>
+					<td>${olist.orderPay}</td>
+				</tr>
+				<tr>
+					<th>주 문 상 태</th>
+					<td>${olist.orderStatus}</td>
+				</tr>
+				<tr>
+					<th>수 령 인</th>
+					<td>${olist.orderRecv}</td>
+				</tr>
+				<tr>
+					<th>우 편 번 호</th>
+					<td>${olist.orderPost}</td>
+				</tr>
+				<tr>
+					<th>수 령 주 소</th>
+					<td>${olist.orderAddr1} ${olist.orderAddr2}</td>
+				</tr>
+				<tr>
+					<th>배 송 메 시 지</th>
+					<td>${olist.orderMsg}</td>
+				</tr>
+				<tr>
+					<th>받 는 적 립 금</th>
+					<td>${olist.orderPointIn}</td>
+				</tr>
+				<tr>
+					<th>내 는 적 립 금</th>
+					<td>${olist.orderPointOut}</td>
+				</tr>
+				<tr cols="2">
+					<td><input type="button" id="list_btn" value="목록으로 돌아가기" style="background: aqua; width: 200px; height: 50px; font-size: 22px; float: right;"></td>
+				</tr>
+			</table>
 		</div>
-		<div>
-			<label>회 원 아 이 디</label>
-			<input name="id" value="${olist.id}" readonly>
-		</div>
-		<div>
-			<label>금 액</label>
-			<input name="orderPrice" value="${olist.orderPrice}" readonly>
-		</div>
-		<div>
-			<label>주 문 일 자</label>
-			<input name="orderDate" value="${olist.orderDate}" pattern="yyyy/MM/dd" readonly>
-		</div>
-		<div>
-			<label>결 제 수 단</label>
-			<input name="orderPay" value="${olist.orderPay}" readonly>
-		</div>
-		<div>
-			<label>주 문 상 태</label>
-			<input name="orderStatus" value="${olist.orderStatus}" readonly>
-		</div>
-		<div>
-			<label>수 령 인</label>
-			<input name="orderRecv" value="${olist.orderRecv}" readonly>
-		</div>
-		<div>
-			<label>우 편 번 호</label>
-			<input name="orderPost" value="${olist.orderPost}" readonly>
-		</div>
-		<div>
-			<label>수 령 주 소</label> <br>
-			<input name="ordeAddr1" value="${olist.orderAddr1}" readonly>
-			<input name="ordeAddr2" value="${olist.orderAddr2}" readonly>
-		</div>
-		<div>
-			<label>배 송 메 시 지</label> <br>
-			<textarea readonly>${olist.orderMsg}</textarea> 
-		</div>
-		<div>
-			<label>받 는 적 립 금</label>
-			<input name="orderPointIn" value="${olist.orderPointIn}" readonly>
-		</div>
-		<div>
-			<label>내 는 적 립 금</label>
-			<input name="orderPointOut" value="${olist.orderPointOut}" readonly>
-		</div>
-		<input type="button" id="list_btn" value="목록으로 돌아가기" style="background: aqua; width: 120px; height: 30px;">
 	
 		<form id="infoForm" method="get" action="/adminOrder/orderList">
 			<input type="hidden" id="orderNum" name="orderNum" value='<c:out value = "${olist.orderNum}"/>'>
-			<input type="hidden" name="type" value='<c:out value = "${cri.type}"/>'> 
-			<input type="hidden" name="keyword" value='<c:out value = "${cri.keyword}"/>'>
+			<input type="hidden" id="type" name="type" value='<c:out value = "${cri.type}"/>'> 
+			<input type="hidden" id="keyword" name="keyword" value='<c:out value = "${cri.keyword}"/>'>
 		</form>
 				
 	<%@include file="../includes/admin/footer.jsp"%>	
@@ -78,6 +83,8 @@
 			
 			$("#list_btn").on("click", function() {
 				form.find("#orderNum").remove();
+				form.find("#type").remove();
+				form.find("#keyword").remove();
 				form.attr("action", "/adminOrder/orderList");
 				form.submit();
 			});

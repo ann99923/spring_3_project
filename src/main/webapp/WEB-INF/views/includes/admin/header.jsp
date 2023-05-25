@@ -7,7 +7,7 @@
 				<ul class="list">
 					<li><a href="/main">메인 페이지</a></li>
 					<li><a href="/member/logout.do">로그아웃</a></li>
-					<li>고객센터</li>
+					<li><a href="#">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- top_subject_area -->
@@ -19,8 +19,12 @@
 				<!-- navigation -->
 				<div class="admin_navi_wrap">
 					<ul>
-						<li><a class="admin_list_01" href="/adminProd/create">상품 등록</a></li>
-						<li><a class="admin_list_02" href="/adminProd/list">상품 목록</a></li>
-						<li><a class="admin_list_03" href="/adminOrder/orderList">주문 목록</a></li>
+						<li><a class="admin_list_01" href="/adminProd/list">Product List</a></li>
+						<li><a class="admin_list_02" href="/adminOrder/orderList">Order List</a></li>
+						<li><a class="admin_list_03" href="/adminOrder/orderList">Member List</a></li>
+						<li><a class="admin_list_04" href="#"></a></li>
+						<li><a class="admin_list_05" href="#"></a></li>
+						<li><a class="admin_list_06" href="#"></a></li>
+						<li><a class="admin_list_07" href="#"></a></li>
 					</ul>
 				</div>

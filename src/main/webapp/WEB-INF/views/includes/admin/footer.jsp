@@ -5,7 +5,7 @@
 			<div class="footer">
 				<div class="footer_container">
 					<div class="footer_left">
-						<img src="../resources/img/logo.png">
+						<img src="../resources/image/logo.png">
 					</div>
 					<div class="footer_right">
 						(주)하이미디어 종로캠퍼스 15층 16강의실 <br>

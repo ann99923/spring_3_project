@@ -53,8 +53,8 @@ public class OrderController {
 	@PostMapping("/orderUpdate")
 	public String adminOrderUpdatePOST(OrderVO oVo, RedirectAttributes rttr) {
 		log.info("update 시작");
-		log.info(oVo.getOrderStatus());
 		oService.updateOrder(oVo);
+		log.info(oVo.getOrderStatus());
 		rttr.addFlashAttribute("result", "수정 성공");
 		
 		return "redirect:/adminOrder/orderList";

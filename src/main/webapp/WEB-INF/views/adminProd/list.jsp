@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Product List Page</title>
-<link rel="stylesheet" href="../resources/css/admin/main.css">
+<link rel="stylesheet" href="../resources/css/adminProd/list.css">
+<link rel="stylesheet" href="../resources/css/includes/admin/header.css">
+<link rel="stylesheet" href="../resources/css/includes/admin/footer.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
@@ -16,10 +18,12 @@
 	<%@include file="../includes/admin/header.jsp"%>
 
 	<div class="admin_content_wrap">
-		<div>상품 목록 페이지의 내용입니다...</div>
 		<div>
 			<c:if test="${listCheck!='empty'}">
-				<table border="1" style="font-size: 23px; border-collapse: collapse;">
+			<div>
+				<button class="top_btn" onclick="location.href='/adminProd/create'">상품 등록 버튼</button>
+			</div>
+				<table class="prodList" border="1">
 					<thead>
 						<tr>
 							<td class="th_column_1">상 품 번 호</td>

@@ -16,11 +16,10 @@
 	<%@include file="../includes/admin/header.jsp"%>
 
 	<div class="admin_content_wrap">
-		<div>주문 목록 페이지의 내용입니다...</div>
 		<div>
 			<form action="/adminOrder/orderUpdate" method="get" id="orderList_form">
 				<c:if test="${listCheck!='empty'}">
-					<table border="1" style="font-size: 23px; border-collapse: collapse;">
+					<table border="1" style="font-size: 23px; border-collapse: collapse; margin: 0 auto;">
 						<thead>
 							<tr>
 								<th class="th_column_1">주 문 번 호</th>
@@ -34,8 +33,39 @@
 								<td id="num"><c:out value="${olist.orderNum}" /></td>
 								<td><a class="move" href='<c:out value="${olist.orderNum}" />'> <c:out value="${olist.id}" /></a></td>
 								<td><fmt:formatDate value="${olist.orderDate}" pattern="yyyy/MM/dd" /></td>
+								<!-- 
 								<td><c:out value="${olist.orderStatus}" />
-									<button class="update_btn" id='<c:out value="${olist.orderNum}" />' style="float: right;">수정</button></td>
+									<button class="update_btn" id='<c:out value="${olist.orderNum}" />' style="float: right;">수정</button>
+								</td>
+								 -->
+								<td>
+										<select class="test" id='<c:out value="${olist.orderNum}" />' style="width: 120px; height: 40px; font-size: 20px;">
+											<c:if test="${olist.orderStatus eq '배송중'}">
+												<option value="배송완료">배송완료</option>
+												<option value="상품준비">상품준비</option>
+												<option value="배송준비">배송준비</option>
+												<option value="배송중" selected="selected">배송중</option>
+											</c:if>
+											<c:if test="${olist.orderStatus eq '배송준비'}">
+												<option value="배송완료">배송완료</option>
+												<option value="상품준비">상품준비</option>
+												<option value="배송준비" selected="selected">배송준비</option>
+												<option value="배송중">배송중</option>
+											</c:if>
+											<c:if test="${olist.orderStatus eq '상품준비'}">
+												<option value="배송완료">배송완료</option>
+												<option value="상품준비" selected="selected">상품준비</option>
+												<option value="배송준비">배송준비</option>
+												<option value="배송중">배송중</option>
+											</c:if>
+											<c:if test="${olist.orderStatus eq '배송완료'}">
+												<option value="배송완료" selected="selected">배송완료</option>
+												<option value="상품준비">상품준비</option>
+												<option value="배송준비">배송준비</option>
+												<option value="배송중">배송중</option>
+											</c:if>
+										</select>
+								</td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -99,9 +129,11 @@
 				if (result === '조회 성공') {
 					alert("조회가 완료되었습니다!!!");
 				}
+				/*
 				if (result === '수정 성공') {
 					alert("수정이 완료되었습니다!!!");
 				}
+				*/
 			}
 		});
 		
@@ -140,11 +172,24 @@
 			sform.find("input[name='pageNum']").val(1);
 			sform.submit();
 		});
-		
+		/*
 		$(".update_btn").on("click", function() {		
 			olform.prepend("<input type='hidden' name='orderNum' value='"+ $(this).attr('id') + "'>");
 			olform.submit();
 		});
+		*/
+		var target = document.querySelectorAll(".test");
+       
+        for(var i=0; i < target.length; i++){
+            target[i].addEventListener("change",function(){
+                //console.log(this.options[this.selectedIndex].value);
+                var status = this.options[this.selectedIndex].value;
+                olform.prepend("<input type='hidden' name='orderNum' value='"+ $(this).attr('id') + "'>");
+                olform.prepend("<input type='hidden' name='orderStatus' value='"+ status + "'>");
+                olform.attr("method", "post");
+                olform.submit();
+        });
+        }
 		/*
 		$(".test").change(function() {
             //var langSelect = document.getElementById("test");  

@@ -4,7 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Product Update Page</title>
-<link rel="stylesheet" href="../resources/css/admin/main.css">
+<link rel="stylesheet" href="../resources/css/adminProd/update.css">
+<link rel="stylesheet" href="../resources/css/includes/admin/header.css">
+<link rel="stylesheet" href="../resources/css/includes/admin/footer.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
@@ -13,12 +15,11 @@
 	<%@include file="../includes/admin/header.jsp"%>
 	
 	<form action="/adminProd/update" method="post" id="updateForm">
-		<h1>수정 페이지</h1>
 		<div class="input_wrap">
 			<label>이 미 지 파 일</label><br>
-				<input type="file" name="img1" src="/resources/image/*"><br>
-				<input type="file" name="img2" src="/resources/image/*"><br>
-				<input type="file" name="img3" src="/resources/image/*"><br>
+				<input type="file" class="img1" src="/resources/image/${pageInfo.img1}"><br>
+				<input type="file" class="img2" src="/resources/image/${pageInfo.img2}"><br>
+				<input type="file" class="img3" src="/resources/image/${pageInfo.img3}"><br>
 		</div>
 		<div class="input_wrap">
 			<label>상 품 번 호</label>
