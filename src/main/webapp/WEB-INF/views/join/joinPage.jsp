@@ -16,7 +16,14 @@
 <!-- 생일추가하기(캘린더) -->
 </head>
 <body>
+
+<div class="wrapper">
+<div class="wrap">
+
+<%@include file = "../include/header.jsp" %>
+
 	<form id="join_form" method="post">
+
 		<!-- 아이디 -->
 		<div class="id_wrap">
 			<div class="id_name">아이디</div>
@@ -105,7 +112,14 @@
 		<div class="join_button_wrap">
 			<input type="button" class="join_button" value="가입하기">
 		</div>
+
+	
 	</form>
+	</div>
+		</div>
+	<!-- footer -->
+			<%@include file = "../include/footer.jsp" %>
+
 	
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<!-- 스크립트 -->
