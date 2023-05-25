@@ -12,4 +12,7 @@ public class NoticeVO {
 	private String noticeContent;	// 글내용
 	private Date postDate;			// 등록일
 
-}
+	private String testbox;
+
+} 
+
