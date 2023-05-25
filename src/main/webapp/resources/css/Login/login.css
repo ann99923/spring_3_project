@@ -41,18 +41,20 @@ ul{
 .top_gnb_area{
 	position: relative;
 }
+/*네비바 왼쪽 로고이미지, 제품보기*/
 .top_gnb_area .top_left{
 	position: absolute;
 	top:0px;
 	left: 150px;
 }
+
 .top_gnb_area .top_left li{
 	list-style: none;
 	float: left;
 	padding: 13px 15px 0 10px;
 	cursor: pointer;
 }
-
+/*네비바 오른쪽 */
 .top_gnb_area .top_right{
 	position: absolute;
 	top: 0px;

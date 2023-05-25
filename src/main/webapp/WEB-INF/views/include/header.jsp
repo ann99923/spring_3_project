@@ -46,14 +46,14 @@
 				<div class="login_success_area">
 					<c:if test="${member.adminCk == 1 }"> 
 					<!-- 관리자 계정 -->
-						<li><a href="adminProd/main">관리자 페이지</a></li>
+						<li><a href="/adminProd/main">관리자 페이지</a></li>
 						<li>관리자 님</li>
 					<li><a href="/login/logout.do">로그아웃</a></li>
 					</c:if>
 					
 					<c:if test="${member.adminCk == 0 }"> 
 					<li>${member.name} 님</li>
-					<li>마이룸</li>
+					<li><a href="/userOrder/myOrder">마이룸</a></li>
 					<li><a href="/cart/${member.id}">장바구니</a></li>
 					<li>고객센터</li>
 					<li><a href="/login/logout.do">로그아웃</a></li>

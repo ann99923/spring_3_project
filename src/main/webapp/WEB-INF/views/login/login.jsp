@@ -16,7 +16,6 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-
 	<div class="wrapper">
 		<div class="wrap">
 		

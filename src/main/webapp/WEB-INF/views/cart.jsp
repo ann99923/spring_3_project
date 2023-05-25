@@ -26,7 +26,7 @@
 		
 		
 		<div class="content_area">
-		<div class="content_subject"><span>장바구니</span></div>
+		<div class="content_subject"><span></span></div>
 			<!-- 장바구니 리스트 -->
 			<div class="content_middle_section"></div>
 			<!-- 장바구니 가격 합계 -->
@@ -120,7 +120,7 @@
 						</tr>
 					</table>
 					<div class="boundary_div"></div>
-					<table>
+					<table> 
 						<tr>
 							<td>
 								<table>
@@ -141,6 +141,7 @@
 				</div>
 			</div>
 			
+			<div class="btn_section">
 			<!-- 쇼핑계속하기 버튼 -->
 			<div class="continue_btn_section">
 				<a class="continue_btn">쇼핑 계속하기</a>
@@ -149,7 +150,7 @@
 			<div class="content_btn_section">
 				<a class="order_btn">주문하기</a>
 			</div>
-			
+			</div>
 		</div>
 		
 		<!-- 수량 조정 form -->
