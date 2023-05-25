@@ -50,7 +50,7 @@ ul {
 .admin_top_wrap {
 	height: 110px;
 	line-height: 110px;
-	background-color: black;
+	background-color: white;
 }
 
 .top_navi_wrap {
@@ -61,56 +61,81 @@ ul {
 	display: inline;
 	text-align: center;
 	overflow: hidden;
-	background-color: #5e6b9e;
+	background-color: white;
 }
 
 .top_navi_wrap a {
 	float: left;
 	font-size: 16px;
-	color: white;
+	color: black;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 }
 
 .dropdown {
+	border: none;
 	float: left;
 	overflow: hidden;
 	margin-left: 10px;
+	background-color: inherit;
 }
 
 .dropdown .dropbtn {
 	font-size: 16px;
 	font-weight: bold;
-	border: none;
+	border: 1px solid black;
 	outline: none;
-	color: white;
+	color: black;
 	padding: 14px 16px;
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
 	width: 140px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50%;
+	backg
+}
+
+.cate1 {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f9f9f9;
-	width: 466px;
+	background-color: black; 
+	width : 300px;
+	height: 70px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
 
+/*드롭바*/
+.dropdown_wrap {
+	line-height: 110px;
+	background-color: black;
+	width: 100%;
+	min-height: 80px;
+	color: white;
+}
+
 .dropdown-content a {
 	float: none;
-	color: black;
-	padding: 12px 16px;
+	color: white;
 	text-decoration: none;
-	display: inline-block;
+	display: left;
 	text-align: center;
-	width: 80px;
+	width: 60px;
 	font-size: 20px;
 	font-weight: bolder;
+	padding: 12px 16px;
+	margin-top:-100px;
+	
 }
 
 .dropdown:hover .dropdown-content {
@@ -118,7 +143,7 @@ ul {
 }
 
 .dropdown-content a:hover {
-	background-color: #ddd;
+	background-color: black;
 }
 
 .top_navi_wrap li a:link {
@@ -134,10 +159,6 @@ ul {
 }
 
 .top_navi_wrap li a:hover {
-	color: white;
-}
-
-.top_navi_wrap li a:link {
 	color: white;
 }
 
@@ -249,7 +270,7 @@ ul {
 	font-size: 25px;
 }
 
-/*footer 영역*/
+/* footer navai 영역 */
 .footer_nav {
 	width: 100%;
 	height: 50px;
@@ -268,6 +289,7 @@ ul {
 	position: relative;
 	padding-top: 10px;
 	line-height: 27px;
+	font-family: dotum;
 	margin-left: 10px;
 }
 
@@ -281,22 +303,23 @@ ul {
 .footer_nav_container>ul>span {
 	margin: 0 4px;
 }
-
+/* footer 영역 */
 .footer {
 	width: 100%;
 	height: 130px;
-	margin: auto;
+	background-color: #D4DFE6;
+	padding-bottom: 50px;
 }
 
-.footer {
+.footer_container {
 	width: 100%;
-	height: 100px;
+	height: 100%;
 	margin: auto;
 }
 
 .footer_left>img {
-	width: 30%;
-	height: 50px;
+	width: 150%;
+	height: 130px;
 	margin-left: -20px;
 	margin-top: -12px;
 }
@@ -315,7 +338,7 @@ ul {
 	margin-top: 30px;
 }
 
-/*float 속성 해제*/
+/* float 속성 해제 */
 .clearfix {
 	clear: both;
 }

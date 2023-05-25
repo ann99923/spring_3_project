@@ -34,11 +34,11 @@
 									<td class="image"></td>
 									<td class="detail">
 										<div class="category">[${list.cateName}]</div>
-										<div class="title">${list.prodName}</div>
+										<div class="title"><a href="#">${list.prodName}</a></div>
 									</td>
 									<td class="price">
 										<div class="org_price">
-											<del> ${list.price} </del>
+											${list.price}
 										</div>
 									</td>
 									<td class="option"></td>
@@ -89,8 +89,9 @@
 				<div class="table_empty">검색결과가 없습니다.</div>
 			</c:if>
 		</div>
+		<%@include file="includes/footer.jsp"%>
 	</div>
-	<%@include file="includes/footer.jsp"%>
+	
 
 	<script>
 		/* 페이지 이동 버튼 */
