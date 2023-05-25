@@ -1,6 +1,8 @@
 package com.tam.model;
 
+
 import java.util.List;
+
 
 import lombok.Data;
 
@@ -28,10 +30,4 @@ public class CartVO {
 		this.totalPrice = this.price*this.cartCount;
 		
 	}
-
-
-
-	
-	
-
 }
