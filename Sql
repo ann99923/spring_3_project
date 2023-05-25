@@ -90,10 +90,15 @@ create sequence qna_seq start with1 increment by 1;
 -- Q&A 테이블
 create table qna(
 qnaNum number primary key,
+qnaStatus varchar2(100) not null,
+qnaTitle varchar2(100) not null,
 prodNum number not null,
-id varchar2(50) not null,
+id varchar2(100) not null,
 qnaPw number(4) not null,
-qnaContent varchar2(3000)
+qnaContent varchar2(3000),
+anqContent varchar2(3000),
+qnaPostDate date not null,
+anqPostDate date
 );
 
 -- review sequence
