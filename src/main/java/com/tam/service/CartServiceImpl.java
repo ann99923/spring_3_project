@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tam.mapper.AttachMappper;
 import com.tam.mapper.CartMapper;
 import com.tam.model.CartVO;
 
@@ -13,6 +14,9 @@ public class CartServiceImpl implements CartService{
 	
 	@Autowired
 	private CartMapper cartMapper;
+	
+	@Autowired
+	private AttachMappper attachMapper;
 
 	@Override
 	public int addCart(CartVO cart) {

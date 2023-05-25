@@ -13,6 +13,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 				</a>
 				<ul class="top_left">
 					<li><a href="../shop/productMain">제품보기</a></li>
-					<li><a href="">베스트셀러</a></li>
+					
 					
 				</ul>
 				
@@ -39,6 +40,7 @@
 					<li>
 					<a href="/join/joinPage">회원가입</a>
 					</li>
+				
 					</c:if>
 				
 				<!-- 로그인 o -->	
@@ -49,8 +51,8 @@
 					</c:if>
 					
 					<li>${member.name} 님</li>
-					<li>마이 페이지</li>
-					<li><a href="/cart">장바구니</a></li>
+					<li>마이룸</li>
+					<li><a href="/cart/${member.id}">장바구니</a></li>
 					<li>고객센터</li>
 					<li><a href="/login/logout.do">로그아웃</a></li>
 				</div>
@@ -63,9 +65,11 @@
 			
 			<!-- 메인 화면 사진 부분 -->
 			<div class="content_area">
-				<p>어쩌고 저쩌고</p>
+				<p>SAMDASOO</p>
 				<input type="button" class="btn-navi" value="전제품 보기">
-				<input type="button" class="btn-navi" value="오프라인">
+				<input type="button" class="btn-navi"
+				onclick="window.open('https://www.google.co.kr/maps/place/TAMBURINS+Flagship+Store+Samcheong/data=!3m1!4b1!4m6!3m5!1s0x357ca310873a0217:0x48767bcb989ef154!8m2!3d37.5793989!4d126.9822207!16s%2Fg%2F11khm926xj')"
+				 value="오프라인">
 			</div>
 				
 		
@@ -119,7 +123,10 @@
 			
 		</div>
 	
-	
+	<script type="text/javascript">
+    
+
+</script>
 	
 
 </body>

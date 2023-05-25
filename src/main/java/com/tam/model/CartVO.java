@@ -1,8 +1,10 @@
 package com.tam.model;
 
+import java.util.List;
+
 import lombok.Data;
 
-
+@Data
 public class CartVO {
 	
 	private int cartNum;		// 장바구니 번호
@@ -18,89 +20,17 @@ public class CartVO {
 	private int price;
 	private int totalPrice;
 	
+	//이미지
+	private List<ProductVO> imageList;
 	
+	//가격 합계
 	public void initSaleTotal() {
 		this.totalPrice = this.price*this.cartCount;
 		
 	}
 
 
-	public int getCartNum() {
-		return cartNum;
-	}
 
-
-	public void setCartNum(int cartNum) {
-		this.cartNum = cartNum;
-	}
-
-
-	public int getProdNum() {
-		return prodNum;
-	}
-
-
-	public void setProdNum(int prodNum) {
-		this.prodNum = prodNum;
-	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-
-	public int getCartCount() {
-		return cartCount;
-	}
-
-
-	public void setCartCount(int cartCount) {
-		this.cartCount = cartCount;
-	}
-
-
-	public String getProdName() {
-		return prodName;
-	}
-
-
-	public void setProdName(String prodName) {
-		this.prodName = prodName;
-	}
-
-
-	public int getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-
-	public int getTotalPrice() {
-		return totalPrice;
-	}
-
-
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-
-	@Override
-	public String toString() {
-		return "CartVO [cartNum=" + cartNum + ", prodNum=" + prodNum + ", id=" + id + ", cartCount=" + cartCount
-				+ ", prodName=" + prodName + ", price=" + price + ", totalPrice=" + totalPrice + "]";
-	}
-	
 	
 	
 

@@ -21,7 +21,7 @@
 	<div class="wrap">
 		<div class="top_gnb_area">
 			<a href="/main">
-				<img class="logo" src="resources/img/logo.png">
+				<img class="logo" src="/resources/img/logo.png">
 				</a>
 			<ul class="list">
 				<c:if test = "${member == null}">	<!-- 로그인 x -->	
@@ -78,7 +78,12 @@
 			<input type="hidden" class="individual_prodNum_input" value="${ci.prodNum}">
 								</td>	
 								<td class="td_width_2">
-									
+									<div class="image_wrap" data-prodNum="${ci.imageList[0].prodNum}" 
+									data-path="${ci.imageList[0].uploadPath}" 
+									data-uuid="${ci.imageList[0].uuid}"
+									data-filename="${ci.imageList[0].fileName}">
+										<img>
+									</div>
 								</td>
 								<td class="td_width_3">${ci.prodName}</td>
 								<td class="td_width_4 price_td">
@@ -103,11 +108,12 @@
 					</tbody>
 				</table>
 				<table class="list_table">
+				
 				</table>
 			</div>
 			
 			
-			
+			<!-- <span>결제내역</span> -->
 			<!-- 가격 종합 -->
 			<div class="content_total_section">
 				<div class="total_wrap">
@@ -117,7 +123,7 @@
 								<table>
 									<tr>
 										<td>주문 금액</td>
-										<td>
+										<td class="cart_span">
 											<span class="totalPrice_span">70000</span> 원
 										</td>
 									</tr>
@@ -125,12 +131,12 @@
 										<td>배송비<span class="deliver_p">3만원 이상 구매시 무료</span></td>
 										
 											
-											<td><span class="delivery_price">3000</span>원
+											<td class="cart_span"><span class="delivery_price">3000</span>원
 										</td>
 									</tr>									
 									<tr>
 										<td>총 주문 상품수</td>
-										<td><span class="totalCount_span"></span> 개</td>
+										<td class="cart_span"><span class="totalCount_span"></span> 개</td>
 									</tr>
 								</table>
 							</td>
@@ -144,19 +150,18 @@
 							</td>
 						</tr>
 					</table>
-					<div class="boundary_div">----------------------</div>
+					<div class="boundary_div"></div>
 					<table>
 						<tr>
 							<td>
 								<table>
 									<tbody>
 										<tr>
-											<td>
+											<td class="total_pr">
 												<strong>총 금액</strong>
 											</td>
-											<td>
-												<span class="finalTotalPrice_span"></span> 원
-											</td>
+											<td class="cart_span">
+												<span class="finalTotalPrice_span"></span> 원</td>
 										</tr>
 									</tbody>
 								</table>
@@ -218,10 +223,10 @@
 			<div class="footer_container">
 				
 				<div class="footer_left">
-					<img src="#">
+					<img src="/resources/img/logo.png">
 				</div>
 				<div class="footer_right">
-					(주) VamBook    대표이사 : OOO
+					(주) 하이뷰티   대표이사 : OOO
 					<br>
 					사업자등록번호 : ooo-oo-ooooo
 					<br>
@@ -244,6 +249,24 @@ $(document).ready(function(){
 	
 	/* 종합 정보 섹션 정보 삽입 */
 	setTotalInfo();	
+	
+	/*이미지 삽입*/
+	$(".image_wrap").each(function(i, obj){
+const bobj = $(obj);
+		
+		if(bobj.data("prodNum")){
+			const uploadPath = bobj.data("path");
+			const uuid = bobj.data("uuid");
+			const fileName = bobj.data("filename");
+			
+			const fileCallPath = encodeURIComponent(uploadPath + "/s_" + uuid + "_" + fileName);
+			
+			$(this).find("img").attr('src', '/display?fileName=' + fileCallPath);
+		} else {
+			$(this).find("img").attr('src', '/resources/img/23.png');
+		}
+	});
+	
 	});	
 
 /* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
