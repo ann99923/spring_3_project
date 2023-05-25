@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* 각자 CSS에 추가해줄것*/
 *{
 	margin:0;
 	padding:0;
@@ -15,131 +16,162 @@ ul{
 /*화면 전체 랩*/
 .wrapper{
 	width: 100%;
-	height: 700px;
+	height: 800px;
 }
 
 /*content wrap*/
 .wrap{
-	width: 100%;
+	width:100%;
+	height: 700px;
 	margin: auto;
-
 }
 
+
 /* gnb영역 */
+/*홈페이지 로그인*/
 .top_gnb_area{
 	width: 100%;
 	height: 50px;
 	background-color: white;
 	position: relative;
 	list-style: none;
-	background-color: pink;
+	
 }
-
-
 
 .top_gnb_area{
 	position: relative;
 }
 .top_gnb_area .top_left{
 	position: absolute;
-	top: 0px;
-	left: 200px;
+	top:0px;
+	left: 150px;
 }
 .top_gnb_area .top_left li{
 	list-style: none;
 	float: left;
-	padding: 10px 10px 0 5px;
+	padding: 13px 15px 0 10px;
 	cursor: pointer;
 }
-.top_gnb_area .top_left li a{color:white; font-size:20px; font-weight: bold;}
-.a:link{color:white}
-.a:visited{color: white;}
-
 
 .top_gnb_area .top_right{
 	position: absolute;
 	top: 0px;
-	left: 200px;
+	right: 10px;
 }
 .top_gnb_area .top_right li{
 	list-style: none;
 	float: left;
-	padding: 10px 10px 0 5px;
+	padding: 13px 15px 0 10px;
 	cursor: pointer;
 }
-.top_gnb_area .top_right li a{color:white; font-size:20px; font-weight: bold;}
-.a:link{color:white}
-.a:visited{color: white;}
 
-/*로고*/
-.logo{
-	width: 150px;
-	height: 35px;
-	margin-top: 10px;
-	margin-left: 30px;
-}
-
-
-/*로그인*/
-.login_wrap{
-	width: 380px;
-	height: 400px;
-	border: 1px solid silver;
-	margin-top: 100px;
-	margin-left: 500px;
-	padding-top:70px;
-	padding-left: 140px;
-}
-.logo_wrap{
-	text-align: cetner;
-
-}
-.logo_wrap span{
-	font-size: 23px;
-	font-weight: bold;
+/*로그인 성공 영역*/
+.login_success_area>a{
+	font-size: 13px;
+	font-weight: 900;
+	display: inline-block;
+	top:2px;
+	position: absolute;
 	
 }
 
+.top_gnb_area .top_left li a{color:black; font-size:20px; text-decoration: none;}
+.a:link{color:black; text-decoration: none;}
+.a:visited{color: black; text-decoration: none;}
 
+.top_gnb_area .top_right li a{color:black; font-size:20px; text-decoration: none;}
+.a:link{color:black}
+.a:visited{color: black;}
+.top_gnb_area .top_right li{color:black; font-size:20px;}
+.li:link{color:black}
+.li:visited{color: black;}
+
+/*로고*/
+.top_gnb_area a{
+	width: 150px;
+	height: 50px;
+	margin-left: 20px;
+}
+.logo{
+	width: 180px;
+	height: 100%;
+	object-fit:cover;
+	
+}
+/* 여기까지 헤더 */
+
+/*로그인*/
+
+#login_form{
+	width: 400px;
+	height: 500px;
+	border: 1px solid silver;
+	margin: auto;
+	padding-top:70px;
+	padding-left: 70px;
+	margin-top: 60px;
+}
+#login_form span{
+	float: left;
+	font-size: 25px;
+}
+
+
+.logo_wrap{
+	float: center;
+	margin-top: 40px;
+
+}
+
+/*아이디 영역*/
 .id_wrap{
-	margin-top: 20px;
-	top: 20px;
-	font-size: 13px;
+	width:100%;
+    margin-top: 20px;
+}
+.id_name{
+	font-size: 15px;
+   
 }
 .id_input_box{
+	margin-top: 12px;
+	width: 72%;
 	border: 1px solid black;
-	height:15px;
-	padding: 10px 14px;	
-	display: block;
-	width : 210px;
+	height:31px;
+	
+	
 }
 .id_input{
-	width:100%;
-	height:20px;
+	width:90%;
+	height:100%;
 	border:none;
-	font-size:15px;
+	font-size:20px;
+	margin-left: 10px;
 }
 
-
+/*비밀번호 영역*/
 .pw_wrap{
-	margin-top: 10px;
-	top: 50px;
-	font-size: 13px;
+	width:100%;
+    margin-top: 20px;
 }
-
+.pw_name{
+	font-size: 15px;
+   
+}
 .pw_input_box{
+	margin-top: 12px;
+	width: 72%;
 	border: 1px solid black;
-	height:15px;
-	padding: 10px 14px;	
-	display: block;
-	width : 210px;
+	height:31px;
 }
 .pw_input{
-	width:100%;
-	height:20px;
+	width:90%;
+	height:100%;
 	border:none;
-	font-size:15px;
+	font-size:20px;
+	margin-left: 10px;
 }
+
+
 
 /*버튼*/
 .button{
@@ -148,11 +180,11 @@ ul{
 .login_button{
 	width: 240px;
     height: 30px;
-    background-color: pink;
+	background-color: white;
     font-size: 15px;
     font-weight: 900;
-    color: white;
-    border: 1px solid silver;
+    color: black;
+    border: 1px solid black;
 }
 
 .login_warn{
@@ -163,11 +195,11 @@ ul{
 .join{
 	width: 240px;
     height: 30px;
-    background-color: pink;
+    background-color: white;
     font-size: 15px;
     font-weight: 900;
-    color: white;
-    border: 1px solid silver;
+    color: black;
+    border: 1px solid black;
     margin-top: 10px;
 }
 
@@ -192,23 +224,23 @@ ul{
     margin-top: 10px;
 }
 
+/* 각자 CSS에 추가해줄것- 푸터*/
 /*footer*/
 
 .footer1{
 	position: absolute;
 	bottom: 0;
-	border: 1px solid gray;
 }
 /*footer navi 영역*/
 .footer_nav{
 	width: 100%;
 	height: 50px;
-	border-top: 1px solid gray;
 }
 .footer_nav_container{
 	width: 100%;
 	height: 100%;
-	background-color: white;
+	background-color: black;
+	color: white;
 }
 .footer_nav_container>ul{
 	font-weight: bold;
@@ -233,21 +265,23 @@ ul{
 /*footer영역*/
 .footer{
 	width: 100%;
-	height: 130px;
-	background-color: white;
+	height: 140px;
+	background-color: black;
 	padding-bottom: 50px;
+	
 }
 
 .footer_container{
 	width: 100%;
 	height: 100%;
-	margin: auto;
+	float: left;
+	
 }
 .footer_left>img{
 	width: 150%;
 	height: 50px;
-	margin-left: -20px;
-	margin-top: 10px;
+	float: left;
+	margin-top: 5px;
 }
 .footer_left{
 	float: left;
@@ -258,11 +292,12 @@ ul{
 .footer_right{
 	float: left;
 	width: 680px;
-	margin-left:120px;
-	margin-top: 30px;
+	margin-left:140px;
+	margin-top: 10px;
+	color: white;
 }
-
 /*float 속성 해제*/
 .clearfix{
 	clear: both;
 }
+/* 여기까지 CSS에 추가해줄것*/

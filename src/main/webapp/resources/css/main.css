@@ -20,12 +20,10 @@ ul{
 
 /*content wrap*/
 .wrap{
-	width: 100%;
+	width:100%;
 	margin: auto;
-	background-image: url("../img/11.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
 }
+
 
 /* gnb영역 */
 /*홈페이지 로그인*/
@@ -44,7 +42,7 @@ ul{
 .top_gnb_area .top_left{
 	position: absolute;
 	top:0px;
-	left: 200px;
+	left: 150px;
 }
 .top_gnb_area .top_left li{
 	list-style: none;
@@ -87,19 +85,25 @@ ul{
 .li:visited{color: black;}
 
 /*로고*/
-.logo{
+
+.top_gnb_area a{
 	width: 150px;
-	height: 35px;
-	margin-top: 10px;
-	margin-left: 30px;
+	height: 50px;
+	margin-left: 20px;
 }
+.logo{
+	width: 180px;
+	height: 120%;
+	object-fit:cover;
+}
+
 
 /*홈페이지 메인*/
 .content_area{
 	width: 100%;
-	height: 700px;
-	background-image: url("../img/11.jpg");
-	background-size: 100%;
+	height: 900px;
+	background-image: url("../img/Main.jpg");
+	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
 }
@@ -139,7 +143,8 @@ ul{
 .footer_nav_container{
 	width: 100%;
 	height: 100%;
-	background-color: green;
+	background-color: black;
+	color: white;
 }
 .footer_nav_container>ul{
 	font-weight: bold;
@@ -165,7 +170,7 @@ ul{
 .footer{
 	width: 100%;
 	height: 140px;
-	background-color: green;
+	background-color: black;
 	padding-bottom: 50px;
 	
 }
@@ -193,6 +198,7 @@ ul{
 	width: 680px;
 	margin-left:140px;
 	margin-top: 10px;
+	color: white;
 }
 /*float 속성 해제*/
 .clearfix{

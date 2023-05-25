@@ -19,36 +19,7 @@
 
 <div class="wrapper">
 	<div class="wrap">
-		<div class="top_gnb_area">
-			<a href="/main">
-				<img class="logo" src="/resources/img/logo.png">
-				</a>
-			<ul class="list">
-				<c:if test = "${member == null}">	<!-- 로그인 x -->	
-					<li >
-						<a href="/member/login">로그인</a>
-					</li>
-					<li>
-						<a href="/member/join">회원가입</a>
-					</li>
-				</c:if>
-				<c:if test="${member != null}">	
-				<!-- 로그인 o -->		
-					<c:if test="${member.adminCk == 1 }">	
-					<!-- 관리자 계정 -->
-						<li><a href="/admin/main">관리자 페이지</a></li>
-					</c:if>							
-					<li>
-						<a href="/login/logout.do">로그아웃</a>
-					</li>
-					<li>
-						마이룸
-					</li>
-				
-				</c:if>				
-				<li> 고객센터 </li>			
-			</ul>			
-		</div>
+		<%@include file = "../views/include/header.jsp" %>
 			<div class="clearfix"></div>			
 		
 		
@@ -107,9 +78,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<table class="list_table">
-				
-				</table>
+			
 			</div>
 			
 			
@@ -202,40 +171,8 @@
 			</form>
 		
 		<!-- Footer 영역 -->
-		<div class="footer_nav">
-			<div class="footer_nav_container">
-				<ul>
-					<li>회사소개</li>
-					<span class="line">|</span>
-					<li>이용약관</li>
-					<span class="line">|</span>
-					<li>고객센터</li>
-					<span class="line">|</span>
-					<li>광고문의</li>
-					<span class="line">|</span>
-					<li>채용정보</li>
-					<span class="line">|</span>
-				</ul>
-			</div>
-		</div> <!-- class="footer_nav" -->
-		
-		<div class="footer">
-			<div class="footer_container">
-				
-				<div class="footer_left">
-					<img src="/resources/img/logo.png">
-				</div>
-				<div class="footer_right">
-					(주) 하이뷰티   대표이사 : OOO
-					<br>
-					사업자등록번호 : ooo-oo-ooooo
-					<br>
-					대표전화 : oooo-oooo(발신자 부담전화)
-					<br>
-					<br>
-					COPYRIGHT(C) <strong>kimvampa.tistory.com</strong>	ALL RIGHTS RESERVED.
-				</div>
-				<div class="clearfix"></div>
+<!-- footer -->
+			<%@include file = "../views/include/footer.jsp" %>
 			</div>
 		</div> <!-- class="footer" -->		
 		
