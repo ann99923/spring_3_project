@@ -92,11 +92,20 @@ public class UserOrderController {
 		List<OrderDetailDTO> list = uoService.myOrderDetail(orderNum);
 		Order2DTO dto = uoService.myOrder(orderNum);
 		
-		model.addAttribute("list", list);
-		model.addAttribute("dto", dto);
+		model.addAttribute("detail", list);
+		model.addAttribute("order", dto);
 		
 		System.out.println("주문 상세 페이지");
 		
 		return "/userOrder/myOrderDetail";
 	}
+	
+	// 주문 취소처리
+	@GetMapping("/cancelOrder/{orderNum}")
+	public String cancelMyOrder(@PathVariable int orderNum) {
+		uoService.cancelMyOrder(orderNum);
+		
+		return "redirect:/userOrder/myOrder";
+	}
+
 }

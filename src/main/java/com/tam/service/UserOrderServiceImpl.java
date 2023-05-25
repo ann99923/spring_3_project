@@ -154,4 +154,12 @@ public class UserOrderServiceImpl implements UserOrderService {
 		// TODO Auto-generated method stub
 		return uoMapper.myOrder(orderNum);
 	}
+	
+	// 주문 취소처리
+	@Override
+	public int cancelMyOrder(int orderNum) {
+		// TODO Auto-generated method stub
+		return uoMapper.cancelMyOrder(orderNum);
+		
+	}
 }

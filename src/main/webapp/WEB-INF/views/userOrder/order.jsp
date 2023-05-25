@@ -14,36 +14,36 @@
 <link rel="stylesheet" href="/resources/css/userOrder/order.css">
 </head>
 <body>
-
-	<div class="wrapper">
-		<div class="wrap">
-			<h1>주문 결제</h1>
-			
+	
+	<%@include file = "/WEB-INF/views/include/header.jsp" %>
+	
 			<div class="content_area">
-				<div class="content_subject"><span>주문/결제</span></div>
-				
-				<div class="content_main">		
+			
+				<div class="content_main column-container">		
 				<form id="orderForm" method="post">
-					<div class="accordion-box"> 
+		
+				<div class="column-left">
+					<div class="content_subject"><h2>주문/결제</h2></div>
+					<div class="accordion-box">
 					<ul class="list">
 						<!-- 주문자 정보 -->	
 						<li>
-							<p class="title">주문자 정보</p>
-							<div class="member_info_div con">
+							<p class="title t1">주문자 정보</p>
+							<div class="member_info_div con1">
 								<div>
 									<span>이름</span>
-									<div><input type="text" name="name" value="${memberInfo.name }"></div>
+									<div><input type="text" class="name_input" name="name" value="${memberInfo.name }"></div>
 								</div>
 								<div>
 									<span>이메일</span>
-									<div><input type="text" name="email" readonly="readonly" value="${memberInfo.email }"></div>
+									<div><input type="text" class="email_input" name="email" value="${memberInfo.email }"></div>
 								</div>
 								<div>
 									<span>연락처</span>
-									<div><input type="text" name="tel" readonly="readonly" value="${memberInfo.tel }"></div>
+									<div><input type="text" class="tel_input" name="tel" value="${memberInfo.tel }"></div>
 								</div>
 								<div>
-									<a href="#">저장하고 다음 단계로</a>
+									<a class="con1_btn">저장하고 다음 단계로</a>
 								</div>
 								<input type="hidden" name="id" value="${memberInfo.id }">
 							</div>
@@ -51,11 +51,11 @@
 					
 						<!-- 배송 정보 -->
 						<li>
-							<p class="title">배송 정보</p>
-							<div class="delivery_div con">						
+							<p class="title t2">배송 정보</p>
+							<div class="delivery_div con2">						
 								<div>
 									<span>수령인</span>
-									<a class="my_info" onclick="userInfo()">주문자 정보와 동일</a>
+									<br><a class="my_info" onclick="userInfo()">주문자 정보와 동일</a>
 									<div><input class="orderRecv_input" type="text" name="orderRecv"></div>
 								</div>
 								<div>
@@ -79,15 +79,15 @@
 									<div><input type="text" name="orderMsg"></div>
 								</div>
 								<div>
-									<a href="#">저장하고 다음 단계로</a>
+									<a class="con2_btn">저장하고 다음 단계로</a>
 								</div>
 							</div>
 						</li>
 						
 						<!-- 할인/혜택 사용 -->
 						<li>
-							<p class="title">할인/혜택 사용</p>
-							<div class="point_div con">				
+							<p class="title t3">할인/혜택 사용</p>
+							<div class="point_div con3">				
 								<div class="point">
 									<span>보유 포인트</span>
 									<div><input type="text" name="myPoint" disabled="disabled" value="${point }"></div>
@@ -99,26 +99,28 @@
 										<a class="order_point_input_btn order_point_input_btn_N" data-state="N">전액 사용</a>
 										<a class="order_point_input_btn order_point_input_btn_Y" data-state="Y" style="display: none;">적용 취소</a>
 									</div>
+									<!-- 버튼 영역 -->
+									<div><button class="order_btn">결제하기</button></div>
 								</div>
-							</div>
+							</div>		
 						</li>
 					</ul>
 					</div> <!-- accodion-box -->
-		
+				</div><!-- column-left -->
+				
+				
+				<div class="column-right">
+				<div class="content_subject2"><h2>결제 내역</h2></div>
 					<!-- 결제 내역 -->
 					<div>
-						<span>결제 내역</span>
 						<!-- 상품정보 -->
-						<table class="product_table">
-							<c:forEach var="ol" items="${orderList }">
-								<tr>
-									<td>${ol.prodName}</td>
-								<tr>
-								<tr>
-									<td class="prod_table_price_td">
-									<fmt:formatNumber value="${ol.price}" pattern="#,### 원" /> | 수량 ${ol.prodCount}개
-									<fmt:formatNumber value="${ol.totalPrice}" pattern="#,### 원" />
-									[<fmt:formatNumber value="${ol.totalPoint}" pattern="#,### 원" />P]
+						<div class="selected-products">
+							<ul class="product-list">
+							<c:forEach var="ol" items="${orderList }">			
+								<li class="prod_table_price_td">
+									<div>${ol.prodName}</div>
+									<div>${ol.prodCount}개</div>
+									<div><fmt:formatNumber value="${ol.totalPrice}" pattern="#,### 원" /></div>
 	
 									<input type="hidden" class="individual_price_input" value="${ol.price}">
 									<input type="hidden" class="individual_prodCount_input" value="${ol.prodCount}">
@@ -126,39 +128,48 @@
 									<input type="hidden" class="individual_point_input" value="${ol.point}">
 									<input type="hidden" class="individual_totalPoint_input" value="${ol.totalPoint}">
 									<input type="hidden" class="individual_prodNum_input" value="${ol.prodNum}">
-									</td>
-								</tr>
+								</li>	
 							</c:forEach>
-						</table>
-					</div>
-					<div class="total_info_div">
-						<!-- 가격 종합 정보 -->
-						<div class="total_info_price_div">
-							<!-- 주문 총 금액 -->
-							<span>주문금액</span>
-							<span class="totalPrice_span"></span>
-							<!-- 배송비 -->
-							<span>배송비</span>
-							<span class="deliveryPrice_span"></span>
-							<!-- 할인 금액 -->
-							<span>할인금액</span>
-							<span class="usePoint_span"></span>
-							<!-- 총 금액 -->
-							<span>총 금액</span>
-							<span class="finalTotalPrice_span"></span>
-							<!-- 적립금액 -->
-							<span>총 적립금액</span>
-							<span class="totalPoint_span"></span>
+							</ul>
+						</div>
+
+						<div class="total_info_div">
+							<!-- 가격 종합 정보 -->
+							<div class="total_info_price_div">
+								<div>
+								<!-- 주문 총 금액 -->
+								<span>주문금액</span>
+								<span class="totalPrice_span"></span>
+								</div>
+								<div>
+								<!-- 배송비 -->
+								<span>배송비</span>
+								<span class="deliveryPrice_span"></span>
+								</div>
+								<div>
+								<!-- 할인 금액 -->
+								<span>할인금액</span>
+								<span class="usePoint_span"></span>
+								</div>
+							</div>
+							<div>
+								<!-- 총 금액 -->
+								<span>총 금액</span>
+								<span class="finalTotalPrice_span"></span>
+							</div>
+							<div>
+								<!-- 적립금액 -->
+								<span>총 적립금액</span>
+								<span class="totalPoint_span"></span>
+							</div>
 						</div>
 					</div>
-					
-					<!-- 버튼 영역 -->
-					<button class="order_btn">결제하기</button>
+				</div><!-- column-right -->
 					</form>
 				</div>		
 			</div>
-		</div>
-	</div>
+			
+		<%@include file = "/WEB-INF/views/include/footer.jsp" %>
 	
 	
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -310,9 +321,13 @@
 				}
 				/* 수령주소 유효성 검사 */
 				if(odAddr == ""){
+					$('.post_input').css('border-color', 'red');
+					$('.addr1_input').css('border-color', 'red');
 					$('.addr2_input').css('border-color', 'red');
 					addrCheck = false;
 				}else{
+					$('.post_input').css('border-color', 'black');
+					$('.addr1_input').css('border-color', 'black');
 					$('.addr2_input').css('border-color', 'black');
 					addrCheck = true;
 				}
@@ -378,10 +393,21 @@
 		}
 		
 		// 아코디언 효과
-		$("p.title").on('click',function(){
-			  $(".con").slideUp(100);
-			  $(this).next(".con").slideDown(100);
-			});	
+		$("p.t1").on('click',function(){
+			  $(".con1").slideDown(100);
+			  $(".con2").slideUp(100);
+			  $(".con3").slideUp(100);
+			});
+		$(".con1_btn").on('click', function(){
+			// 아이디 이메일 번호 유효성검사
+			$(".con1").slideUp(100);
+			$(".con2").slideDown(100);
+		});
+		$(".con2_btn").on('click', function(){
+			// 수령인 주소 유효성검사
+			$(".con2").slideUp(100);
+			$(".con3").slideDown(100);
+		});
 	</script>
 	
 </body>

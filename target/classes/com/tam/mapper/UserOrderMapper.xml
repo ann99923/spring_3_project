@@ -117,5 +117,11 @@
 		select * from orderlist
 		where orderNum=#{orderNum}
 	</select>
+	
+	<!-- 주문 취소 처리 -->
+	<update id="cancelMyOrder">
+		update orderList set orderStatus = '주문취소'
+		where orderNum=#{orderNum}
+	</update>
 
 </mapper>

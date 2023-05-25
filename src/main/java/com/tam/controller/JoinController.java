@@ -55,7 +55,7 @@ public class JoinController {
 		// 회원가입 실행
 		joinService.memberJoin(member);
 		
-		return "redirect:/";
+		return "redirect:/main";
 	}
 	
 	/* 아이디 중복 검사 */

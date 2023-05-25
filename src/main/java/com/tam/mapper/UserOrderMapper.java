@@ -63,4 +63,7 @@ public interface UserOrderMapper {
 	
 	// 주문 정보
 	public Order2DTO myOrder(int orderNum);
+	
+	// 주문 취소처리
+	public int cancelMyOrder(int orderNum);
 }

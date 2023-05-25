@@ -7,14 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="/resources/css/userOrder/myOrder.css">
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 </head>
-</head>
 <body>
+
+	<%@ include file="/WEB-INF/views/include/header.jsp" %>
+	<%@ include file="../myPage/sideBar.jsp" %>
 
                 <div class="admin_content_wrap">
                     <div class="admin_content_subject"><span>주문 현황</span></div>
@@ -109,7 +111,9 @@
 						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 						<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 						<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
-					</form>                                    
+					</form>
+					
+					<%@ include file="/WEB-INF/views/include/footer.jsp" %>                                    
 <script>
 let searchForm = $('#searchForm');
 let moveForm = $('#moveForm');
