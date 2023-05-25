@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.tam.mapper.CosmeticsMapper">
+
+	<!-- criteria(검색조건) -->
+	<sql id="criteria">
+
+		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'C'.toString()">
+							cateCode like '%' || #{cateCode} || '%'
+						</when>
+						<when test="type == 'T'.toString()">
+							prodName like '%' || #{keyword} || '%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+
+	</sql>
+
+	<!-- 상품 검색 -->
+	<select id="getProdList" resultType="com.tam.model.CosmeticsVO">
+	
+		<![CDATA[
+		    select * from(select /*+INDEX_DESC(product 인덱스ID)*/ rownum as rn, prodCode, prodName,
+		            (select cateName from category where product.cateCode = category.cateCode) cateName,cateCode, price, prodInfo, stock  
+		        from product
+		        where 
+	    ]]>
+
+		<include refid="criteria"></include>
+	    
+	    <![CDATA[
+	    		        
+		        rownum <= #{pageNum} * #{amount} 
+	        	)
+	        where rn > (#{pageNum} -1) * #{amount}
+		]]>
+
+	</select>
+
+	<!-- 상품 총 개수 -->
+	<select id="prodGetTotal" resultType="int">
+
+		select count(*) from product
+		where
+		<include refid="criteria"></include>
+		prodCode >0
+
+	</select>
+	
+	<!-- 기초 카테고리 리스트 -->
+	<select id="getCateCode1" resultType="com.tam.model.CateVO">
+	
+		<![CDATA[
+			select * from category where cateCode > 100000 and cateCode < 200000
+		]]>
+	</select>
+
+	<!-- 색조 카테고리 리스트 -->
+	<select id="getCateCode2" resultType="com.tam.model.CateVO">
+	
+		<![CDATA[
+			select * from category where cateCode > 200000 and cateCode < 300000
+		]]>
+
+	</select>
+
+	<!-- 향수 카테고리 리스트 -->
+	<select id="getCateCode3" resultType="com.tam.model.CateVO">
+	
+		<![CDATA[
+			select * from category where cateCode > 300000 and cateCode < 400000
+		]]>
+
+	</select>
+
+	<!-- 도구 카테고리 리스트 -->
+	<select id="getCateCode4" resultType="com.tam.model.CateVO">
+	
+		<![CDATA[
+			select * from category where cateCode > 400000 and cateCode < 500000
+		]]>
+
+	</select>
+
+</mapper>

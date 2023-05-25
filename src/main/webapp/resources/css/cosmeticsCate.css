@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+/*화면 전체 랩*/
+.wrapper {
+	width: 100%;
+}
+
+/*content 랩*/
+.wrap {
+	width: 1080px;
+	margin: auto;
+}
+
+/*홈페이지 기능 네비*/
+.top_gnb_area {
+	width: 100%;
+	height: 50px;
+	background-color: #f0f0f1;
+	position: relative;
+}
+
+.top_gnb_area .list {
+	position: absolute;
+	top: 0px;
+	right: 0;
+}
+
+.top_gnb_area .list li {
+	list-style: none;
+	float: left;
+	padding: 13px 15px 0 10px;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+/*관리자 페이지 상단 현페이지 정보*/
+.admin_top_wrap {
+	height: 110px;
+	line-height: 110px;
+	background-color: white;
+}
+
+.top_navi_wrap {
+	width: 20%;
+	height: 300px;
+	float: none;
+	color: white;
+	display: inline;
+	text-align: center;
+	overflow: hidden;
+	background-color: white;
+}
+
+.top_navi_wrap a {
+	float: left;
+	font-size: 16px;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	border: none;
+	float: left;
+	overflow: hidden;
+	margin-left: 10px;
+	background-color: inherit;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid black;
+	outline: none;
+	color: black;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+	width: 140px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50%;
+	backg
+}
+
+.cate1 {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black; 
+	width : 300px;
+	height: 70px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+/*드롭바*/
+.dropdown_wrap {
+	line-height: 110px;
+	background-color: black;
+	width: 100%;
+	min-height: 80px;
+	color: white;
+}
+
+.dropdown-content a {
+	float: none;
+	color: white;
+	text-decoration: none;
+	display: left;
+	text-align: center;
+	width: 60px;
+	font-size: 20px;
+	font-weight: bolder;
+	padding: 12px 16px;
+	margin-top:-100px;
+	
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: black;
+}
+
+.top_navi_wrap li a:link {
+	color: white;
+}
+
+.top_navi_wrap li a:visited {
+	color: white;
+}
+
+.top_navi_wrap li a:active {
+	color: white;
+}
+
+.top_navi_wrap li a:hover {
+	color: white;
+}
+
+.top_navi_wrap li a:visited {
+	color: white;
+}
+
+/*관리자 wrap(네비+컨텐츠)*/
+.admin_wrap {
+	
+}
+
+/* 상품 표 */
+.list_search_result {
+	width: 100%;
+	min-height: 700px;
+	float: none;
+}
+
+.type_list {
+	width: 100%;
+	border-bottom: 1px solid #e7e7e7;
+	border-collapse: collapse;
+}
+
+.type_list tr {
+	height: 200px;
+	border-bottom: 1px solid #e7e7e7;
+}
+
+.detail div {
+	margin-bottom: 5px;
+}
+
+.category {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.title {
+	font-size: 20px;
+	color: #3a60df;
+	font-weight: 700;
+}
+
+.price {
+	text-align: center;
+}
+
+.org_price del {
+	font-size: 13px;
+}
+
+/* 페이지 버튼 인터페이스 */
+.pageMaker_wrap {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.pageMaker {
+	list-style: none;
+	display: inline-block;
+}
+
+.pageMaker_btn {
+	float: left;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 20px;
+}
+
+.active {
+	border: 2px solid black;
+	font-weight: 400;
+}
+
+.next, .prev {
+	border: 1px solid #ccc;
+	padding: 0 10px;
+}
+
+.pageMaker_btn a:link {
+	color: black;
+}
+
+.pageMaker_btn a:visited {
+	color: black;
+}
+
+.pageMaker_btn a:active {
+	color: black;
+}
+
+.pageMaker_btn a:hover {
+	color: black;
+}
+
+.next a, .prev a {
+	color: #ccc;
+}
+
+/* 검색결과 없음 */
+.table_empty {
+	height: 50px;
+	text-align: center;
+	margin: 200px 0 215px 0px;
+	font-size: 25px;
+}
+
+/* footer navai 영역 */
+.footer_nav {
+	width: 100%;
+	height: 50px;
+}
+
+.footer_nav_container {
+	width: 100%;
+	height: 100%;
+	background-color: #8EC0E4;
+}
+
+.footer_nav_container>ul {
+	font-weight: bold;
+	float: left;
+	list-style: none;
+	position: relative;
+	padding-top: 10px;
+	line-height: 27px;
+	font-family: dotum;
+	margin-left: 10px;
+}
+
+.footer_nav_container>ul>li {
+	display: inline;
+	width: 45px;
+	height: 19px;
+	padding: 10px 9px 0 10px;
+}
+
+.footer_nav_container>ul>span {
+	margin: 0 4px;
+}
+/* footer 영역 */
+.footer {
+	width: 100%;
+	height: 130px;
+	background-color: #D4DFE6;
+	padding-bottom: 50px;
+}
+
+.footer_container {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.footer_left>img {
+	width: 150%;
+	height: 130px;
+	margin-left: -20px;
+	margin-top: -12px;
+}
+
+.footer_left {
+	float: left;
+	width: 170px;
+	margin-left: 20px;
+	margin-top: 30px;
+}
+
+.footer_right {
+	float: left;
+	width: 680px;
+	margin-left: 70px;
+	margin-top: 30px;
+}
+
+/* float 속성 해제 */
+.clearfix {
+	clear: both;
+}
