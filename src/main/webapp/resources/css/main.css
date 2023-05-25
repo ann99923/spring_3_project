@@ -112,11 +112,12 @@ ul{
 	position: relative;
 	width: 100px;
 	height: 30px;
-	top: 500px;
+	top: 620px;
 	font-size: 13px;
-	font-weight: bold;
-	color: gray;
-	border: 1px solid silver;
+	
+	color: black;
+	border: 1px solid white;
+	margin: 10px;
 	
 }
 .content_area p{
@@ -124,7 +125,7 @@ ul{
 	font-size: 45px;
 	font-weight: 900;
 	position: relative;
-	top: 500px;
+	top: 600px;
 	text-align: center;
 	
 }
