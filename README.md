@@ -8,4 +8,5 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 테이블 쿼리: https://github.com/ann99934/spring_3_project/blob/etc/Sql <br>
 기능: https://github.com/ann99934/spring_3_project/blob/etc/%EA%B8%B0%EB%8A%A5
 <br>
-![1](https://github.com/ann99934/spring_3_project/assets/110450765/a7f70a05-e3f9-406f-97fc-30aecc64cea3)
+
+![2](https://github.com/ann99934/spring_3_project/assets/110450765/2fad4c09-8a2f-46d4-aeef-f974bff5d80a)
