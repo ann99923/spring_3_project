@@ -1,6 +1,7 @@
 ![3차](https://github.com/ann99934/spring_3_project/assets/110450765/b95f4a5d-8556-48a1-b992-c638f168f211)
 <br><br><br>
 
+
 -- 회원 테이블
 create table member(
     id varchar2(50) primary key,
@@ -21,8 +22,11 @@ commit;
 
 -- 카테고리 테이블
 create table category(
-    categoryNum number primary key,
-    categoryName varchar2(50) not null
+tier number(1) not null,
+cateName VARCHAR2(30) not null,
+cateCode VARCHAR2(30)not null,
+cateParent VARCHAR2(30),
+PRIMARY KEY(cateCode)
 );
 desc category;
 select * from category;
