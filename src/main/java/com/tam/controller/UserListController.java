@@ -28,7 +28,7 @@ public class UserListController {
 
 		int total = aservice.getTotal();
 
-		PageMakerDTO pageMake = new PageMakerDTO(total, cri);
+		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
 		
 		model.addAttribute("pageMaker", pageMake);
 	}

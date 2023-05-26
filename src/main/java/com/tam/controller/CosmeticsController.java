@@ -17,7 +17,7 @@ import com.tam.service.CosmeticsService;
 @Controller
 public class CosmeticsController {
 
-	private static final Logger logger = LoggerFactory.getLogger(UserCateController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CosmeticsController.class);
 
 	@Autowired
 	private CosmeticsService cosService;

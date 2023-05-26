@@ -7,24 +7,18 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tam.model.CaptchaUtil;
 import com.tam.model.MemberVO;
-import com.tam.service.MemberService;
+import com.tam.service.LoginService;
 import com.tam.service.MyPageService;
-import nl.captcha.Captcha;
-
-import lombok.Setter;
 
 @Controller
 @RequestMapping("/mypage/*")
@@ -32,8 +26,8 @@ public class MyPageController {
 	private static final Logger log = LoggerFactory.getLogger(NoticeController.class);
 
 	@Autowired
-	private MemberService mService;
- 
+	private LoginService loginService;
+	
 	@Autowired
 	private MyPageService mpService;
 
@@ -51,7 +45,7 @@ public class MyPageController {
 		HttpSession session = request.getSession();
 		String rawPw = "";
 		String encodePw = "";
-		MemberVO mVo2 = mService.memberLogin(mVo);
+		MemberVO mVo2 = loginService.memberLogin(mVo);
 
 		if (mVo2 != null) {// 아이디 비밀번호 일치(로그인 성공시)
 			rawPw = mVo.getPw(); // 사용자가 제출한 비밀번호
@@ -101,7 +95,7 @@ public class MyPageController {
 		String encodePw = "";
 		String getAnswer = (String) request.getSession().getAttribute("captcha");
 		String answer = request.getParameter("answer");
-		MemberVO mVo2 = mService.memberLogin(mVo);
+		MemberVO mVo2 = loginService.memberLogin(mVo);
 
 		if (mVo2 != null) {// 아이디 비밀번호 일치(로그인 성공시)
 			rawPw = mVo.getPw(); // 사용자가 제출한 비밀번호
@@ -174,7 +168,7 @@ public class MyPageController {
     	mpService.pwChange(mVo);
     	
     	//비밀번호 변경 성공시 로그인 세션 객체 다시 담음    	
-    	mService.memberLogin(mVo);
+    	loginService.memberLogin(mVo);
     	
     	log.info("회원정보 불러오기 : " + mVo);
     	session.setAttribute("member", mVo);
