@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*footer 영역*/
+.footer {
+	width: 100%;
+	height: 130px;
+	background-color: #d4dfe6;
+	padding-bottom: 50px;
+}
+.footer_container {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+.footer_left > img {
+	width: 150%;
+	height: 130px;
+	margin-left: -20px;
+	margin-top: -12px;
+}
+.footer_left {
+	float: left;
+	width: 200px;
+	margin-left: 70px;
+	margin-top: 35px;
+}
+.footer_right {
+	float: left;
+	width: 680px;
+	margin-left: 100px;
+	margin-top: 35px;
+}
+/*footer navi 영역*/
+.footer_navi {
+	width: 100%;
+	height: 50px;
+}
+.footer_navi_container {
+	width: 100%;
+	height: 100%;
+	background-color: #8ec0e4;
+}
+.footer_navi_container > ul {
+	font-weight: bold;
+	float: left;
+	list-style: none;
+	position: relative;
+	padding-top: 10px;
+	line-height: 27px;
+	font-family: dotum;
+	margin-left: 10px;
+}
+.footer_navi_container > ul > li {
+	display: inline;
+	width: 45px;
+	height: 19px;
+	padding: 10px 9px 0 10px;
+}
+.footer_navi_container > ul > span {
+	margin: 0 4px;
+}
+/*float 속성 해제*/
+.clearfix {
+	clear: both;
+}

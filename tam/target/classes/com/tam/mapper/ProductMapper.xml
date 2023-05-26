@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.tam.mapper.ProductMapper">
+		<!-- 상품 목록 -->
+		<select id="pagingList" resultType="com.tam.model.ProductVO">
+			<![CDATA[
+			select rn, prodNum, categoryNum, prodName, price, img1, img2, img3, prodInfo, stock from (
+    			select rownum as rn, prodNum, categoryNum, prodName, price, img1, img2, img3, prodInfo, stock
+    			from product where rownum <= #{pageNum} * #{amount} 
+    		]]>
+    			<!-- 검색 기능 추가 -->
+    			<if test="keyword != null">
+    				<include refid="criteria"></include>
+    				<!-- and title like '%'||#{keyword}||'%' -->
+    			</if>
+    		<![CDATA[
+    			)
+    			where rn > (#{pageNum} -1) * #{amount}
+    		]]>
+		</select>
+		<!-- 상품 등록 -->
+		<insert id="createProd">
+			insert into product (prodNum, prodName, categoryNum, price, img1, img2, img3, prodInfo, stock) values(prod_seq.nextval, #{prodName}, #{categoryNum}, #{price}, #{img1}, #{img2}, #{img3}, #{prodInfo}, #{stock})
+		</insert>
+		<!-- 상품 조회 -->
+		<select id="readProd" resultType="com.tam.model.ProductVO">
+			select * from product where prodNum = #{pno}
+		</select>
+		<!-- 상품 수정 -->
+		<update id="updateProd">
+			update product set prodName = #{prodName}, categoryNum = #{categoryNum}, price = #{price}, img1 = #{img1}, img2 = #{img2}, img3 = #{img3}, prodInfo = #{prodInfo}, stock = #{stock} where prodNum = #{prodNum}
+		</update>
+		<!-- 상품 삭제 -->
+		<delete id="deleteProd">
+			delete from product where prodNum = #{prodNum}
+		</delete>
+		<!-- 상품 총 갯수 + 검색 -->
+		<select id="searchProd" resultType="int">
+			select count(*) from product
+			<if test="keyword != null">
+				where prodNum > 0 <include refid="criteria"></include>
+    			<!-- where title like '%'||#{keyword}||'%' -->
+    		</if>
+    		
+		</select>
+		
+		<!-- 검색 조건문 -->
+		<sql id="criteria">
+			<trim prefix="AND (" suffix=")" prefixOverrides="OR">
+				<foreach collection="typeArr" item="type">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'P'.toString()">
+								prodName like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'C'.toString()">
+								categoryNum like '%'||#{keyword}||'%'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</sql>
+		
+	</mapper>
