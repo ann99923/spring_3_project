@@ -1,3 +1,5 @@
+![3차](https://github.com/ann99934/spring_3_project/assets/110450765/b95f4a5d-8556-48a1-b992-c638f168f211)
+<br><br><br>
 
 -- 회원 테이블
 create table member(
@@ -152,7 +154,7 @@ create table notice(
     noticeNum number(30) unique,
     noticeTitle varchar2(100),
     noticeContent varchar2(3000),
-    postDate date default sysdate,
+    postDate date default sysdate
 );
 desc notice;
 select * from notice;
