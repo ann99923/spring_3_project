@@ -35,8 +35,6 @@
 						</div>
 					</li>
 					<li><a href="../shop/productMain">제품보기</a></li>
-
-
 				</ul>
 
 				<ul class="top_right">
@@ -68,6 +66,52 @@
 					</c:if>
 				</ul>
 			</div>
+
+			<!-- top_subject_area -->
+			<div class="admin_top_wrap">
+				<div class="top_navi_wrap">
+					<div class="dropdown">
+						<button class="dropbtn">
+							<img class="cate1" src="../resources/img/top1.jpg"><i
+								class="fa fa-caret-down"></i>
+						</button>
+						<div class="dropdown-content">
+							<a href="/cosmeticsCate?type=C&cateCode=101000">스킨케어</a> <a
+								href="/cosmeticsCate?type=C&cateCode=102000">썬&바디</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="dropbtn">
+							메이크업 <i class="fa fa-caret-down"></i>
+						</button>
+						<div class="dropdown-content">
+							<a href="/cosmeticsCate?type=C&cateCode=201000">베이스</a> <a
+								href="/cosmeticsCate?type=C&cateCode=202000">립</a> <a
+								href="/cosmeticsCate?type=C&cateCode=203000">아이</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="dropbtn">
+							향수 <i class="fa fa-caret-down"></i>
+						</button>
+						<div class="dropdown-content">
+							<a href="/cosmeticsCate?type=C&cateCode=401000">남성향수</a> <a
+								href="/cosmeticsCate?type=C&cateCode=402000">여성향수</a>
+						</div>
+					</div>
+					<div class="dropdown">
+						<button class="dropbtn">
+							메이크업 소품 <i class="fa fa-caret-down"></i>
+						</button>
+						<div class="dropdown-content">
+							<a href="/cosmeticsCate?type=C&cateCode=501000">베이스</a> <a
+								href="/cosmeticsCate?type=C&cateCode=502000">립&아이</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown_wrap"></div>
+
 			<!-- contents area -->
 			<div class="admin_wrap">
 				<!-- 네비영역 -->
@@ -101,7 +145,6 @@
 								</tbody>
 							</table>
 						</div>
-
 						<!-- 페이지 이동 인터페이스 -->
 						<div class="pageMaker_wrap">
 							<ul class="pageMaker">
