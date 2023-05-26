@@ -1,4 +1,4 @@
-package com.tam.Mapper;
+package com.tam.mapper;
 
 import java.util.ArrayList;
 import java.util.List;

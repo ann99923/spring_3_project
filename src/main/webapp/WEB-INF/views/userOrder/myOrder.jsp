@@ -16,7 +16,7 @@
 <body>
 
 	<%@ include file="/WEB-INF/views/include/header.jsp" %>
-	<%@ include file="../myPage/sideBar.jsp" %>
+	<%@ include file="../mypage/sideBar.jsp" %>
 
                 <div class="admin_content_wrap">
                     <div class="admin_content_subject"><span>주문 현황</span></div>
