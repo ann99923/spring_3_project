@@ -22,6 +22,6 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 - 메인 페이지 /
 - 로그인 페이지 /login/loginPage
 
-- product(admin) -> adminProduct
+- product(admin) -> adminProd
 - order(admin) -> adminOrder
 - 
