@@ -14,3 +14,12 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 <br>
 
 ![2](https://github.com/ann99934/spring_3_project/assets/110450765/2fad4c09-8a2f-46d4-aeef-f974bff5d80a)
+
+<br>
+변경사항
+- header/footer => userHeader-userFooter / adminHeader/adminFooter
+- 메인 페이지 /
+- 로그인 페이지 /login/loginPage
+
+- product(admin) -> adminProduct
+- order(admin) -> adminOrder
