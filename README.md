@@ -18,10 +18,10 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 <br>
 변경사항 <br>
 
-- header/footer => userHeader-userFooter / adminHeader/adminFooter
+- header/footer => userHeader-userFooter / adminHeader
 - 메인 페이지 /
 - 로그인 페이지 /login/loginPage
-
 - product(admin) -> adminProd
 - order(admin) -> adminOrder
-- 
+- cosmeticsMain, cosmeticsCate -> /category/cosmeticMain
+- 상품상세 페이지 /detail/cosmeticDetail
