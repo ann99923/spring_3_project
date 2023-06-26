@@ -23,6 +23,8 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 - 로그인 페이지 /login/loginPage
 - product(admin) -> adminProd
 - order(admin) -> adminOrder
+
+## 06/26
 - cosmeticsMain, cosmeticsCate -> /category/cosmeticMain
 - 상품상세 페이지 /detail/cosmeticDetail
 - 장바구니 페이지 /cart/cartPage
