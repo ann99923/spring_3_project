@@ -26,3 +26,4 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 - cosmeticsMain, cosmeticsCate -> /category/cosmeticMain
 - 상품상세 페이지 /detail/cosmeticDetail
 - 장바구니 페이지 /cart/cartPage
+- 주문 페이지 /userOrder/orderPage
