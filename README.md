@@ -16,15 +16,16 @@ DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
 ![2](https://github.com/ann99934/spring_3_project/assets/110450765/2fad4c09-8a2f-46d4-aeef-f974bff5d80a)
 
 <br>
-변경사항 <br>
+## 변경사항 <br>
 
+### 06/21~23
 - header/footer => userHeader-userFooter / adminHeader
 - 메인 페이지 /
 - 로그인 페이지 /login/loginPage
 - product(admin) -> adminProd
 - order(admin) -> adminOrder
 
-## 06/26
+### 06/26
 - cosmeticsMain, cosmeticsCate -> /category/cosmeticMain
 - 상품상세 페이지 /detail/cosmeticDetail
 - 장바구니 페이지 /cart/cartPage
