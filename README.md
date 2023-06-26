@@ -5,7 +5,7 @@
 4주 : 0522 ~ 0526 >> 3주 기능 이어서 구현 / 1차 merge(0525)
 
 <br><br>
-5주 : 0621 ~ 0625 >> 1차 merge 파일 전체 보완
+5주 : 0621 ~ 0628 >> 1차 merge 후 파일 전체 보완
 
 <br><br>
 DB: https://www.erdcloud.com/d/d4J5sbv3icsP2zY5f <br>
