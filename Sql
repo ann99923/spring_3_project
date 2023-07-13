@@ -22,7 +22,7 @@ commit;
 
 -- 카테고리 테이블
 create table category(
-tier number(1) not null,
+tier number(1),
 cateName VARCHAR2(30) not null,
 cateCode VARCHAR2(30)not null,
 cateParent VARCHAR2(30),
