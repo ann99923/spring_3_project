@@ -33,6 +33,21 @@ select * from category;
 drop table category;
 commit;
 
+-- 카테고리 insert
+insert into category(cateCode, cateName) values(1, '퍼퓸 비누');
+insert into category(cateCode, cateName) values(2, '샤워리바디');
+insert into category(cateCode, cateName) values(3, '퍼퓸');
+insert into category(cateCode, cateName) values(4, '퍼퓸 밤');
+insert into category(cateCode, cateName) values(5, '올팩티브 캔들');
+insert into category(cateCode, cateName) values(6, '퍼퓸 핸드');
+insert into category(cateCode, cateName) values(7, '튜브 핸드');
+insert into category(cateCode, cateName) values(8, '핸드앤바디');
+insert into category(cateCode, cateName) values(9, '체인 핸드');
+insert into category(cateCode, cateName) values(10, '손 소독제');
+insert into category(cateCode, cateName) values(11, '향 오브젝트');
+insert into category(cateCode, cateName) values(12, '샘플 키트');
+insert into category(cateCode, cateName) values(13, '멀티프래그런스');
+
 -- prodNum 시퀀스
 create sequence prod_seq start with 1 increment by 1;
 -- 상품정보 테이블
