@@ -82,7 +82,9 @@ create table orderlist (
     orderAddr2 varchar2(100) not null,
     orderMsg varchar2(1000),
     orderPointIn number(10),
-    orderPointOut number(10) default 0
+    orderPointOut number(10) default 0,
+    mainImg varchar2(100),
+    mainProd varchar2(50)
 );
 desc orderlist;
 select * from orderlist;
@@ -153,6 +155,8 @@ select * from qna;
 drop table qna;
 commit;
 
+-- 공지사항 sequence
+create sequence notice_seq start with 1 increment by 1;
 -- 공지사항 테이블
 create table notice(
     noticeNum number(30) unique,
